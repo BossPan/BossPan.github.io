@@ -2,7 +2,7 @@
 layout:     post
 title:      搭建博客
 summary:    终于在Github上搭建好了。
-categories: jekyll pixyll
+categories: 
 ---
 
 从我决定要做前端的时候，就想搭建自己的博客了。但是自己技术不成熟，写一个的话感觉要很多时间，所以就直接搭在Github上了。方法参照
