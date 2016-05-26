@@ -1,35 +1,20 @@
-<div class="pagination text-align">
-    <div class="btn-group">
-
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="/" class="btn btn-outline">&laquo;</a>
-        {% else %}
-        <a href="/page{{paginator.previous_page}}" class="btn btn-outline">&laquo;</a>
-        {% endif %}
-        {% else %}
-        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&laquo;</button>
-        {% endif %}
-
-        {% if paginator.page == 1 %}
-        <a href="javascript:;" class="active btn btn-outline">1</a>
-        {% else %}
-        <a href="/" class="btn btn-outline">1</a>
-        {% endif %}
-
-        {% for count in (2..paginator.total_pages) %}
-        {% if count == paginator.page %}
-        <a href="javascript:;" class="active btn btn-outline">{{count}}</a>
-        {% else %}
-        <a href="/page{{count}}" class="btn btn-outline">{{count}}</a>
-        {% endif %}
-        {% endfor %}
-
-        {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}" class="btn btn-outline">&raquo;</a>
-        {% else %}
-        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&raquo;</button>
-        {% endif %}
-
-    </div>
+<div class="pagination clearfix mb1 mt4">
+  <div class="left">
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+        <a class="pagination-item" href="{{ site.baseurl }}/">上一页</a>
+      {% else %}
+        <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.previous_page}}/">上一页</a>
+      {% endif %}
+    {% else %}
+      <span class="pagination-item disabled">上一页</span>
+    {% endif %}
+  </div>
+  <div class="right">
+    {% if paginator.next_page %}
+      <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.next_page}}/">下一页</a>
+    {% else %}
+      <span class="pagination-item disabled">下一页</span>
+    {% endif %}
+  </div>
 </div>
