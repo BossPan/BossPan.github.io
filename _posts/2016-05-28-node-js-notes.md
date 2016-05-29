@@ -116,7 +116,7 @@ $ node debug dubug.js
 
 ```
 //在一个终端中
-$node --debug-brk[=port] srcript.js
+$ node --debug-brk[=port] srcript.js
 
 //在另一个终端中
 $ node --node debug 127.0.0.1:5858
@@ -128,7 +128,7 @@ $ node-inspector
 ```
 
 ```
-$node --debug-brk[=port] srcript.js
+$ node --debug-brk[=port] srcript.js
 ```
 
 
