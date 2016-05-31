@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记01
+title:      Node.js开发指南/学习笔记 01
 summary:    Chapter 01~03
 categories: notes
 ---
@@ -95,7 +95,7 @@ exports.Hello = Hello;
 //somepackage/index.js
 
 exports.hello = function() {
-console.log('Hello.');
+  console.log('Hello.');
 };
 
 //getpackage.js
