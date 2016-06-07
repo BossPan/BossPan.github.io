@@ -1,22 +1,22 @@
 ---
 layout:     post
 title:      Node.js开发指南/学习笔记 01
-summary:    Chapter 01~03
-categories: notes
+summary:    Chapter 01~03 Node.js 入门
+categories: note
 ---
-## 1. Node.js 简介
+### 1. Node.js 简介
 
 - Node.js 是一个让 Javascript 运行在服务器端的开发平台。
 - Node.js不运行在浏览器中，不存在 JavaScript 的浏览器兼容性问题，你可以放心地使用 JavaScript 语言的所有特性。
 - Node.js 最大的特点是单线程、异步式 I/O、事件驱动的程序设计模型。
 
-## 2. 安装和配置
+### 2. 安装和配置
 
 - [https://nodejs.org/en/](https://nodejs.org/en/)
 
-## 3. Node.js快速入门
+### 3. Node.js快速入门
 
-#### 建立HTTP服务器
+#### 3.1 建立HTTP服务器
 
 ```
 var http = require('http');
@@ -30,7 +30,7 @@ http.createServer(function(req, res) {
 console.log("HTTP server is listening at port 3000.");
 ```
 
-#### 模块
+#### 3.2 模块
 
 - 文件和模块一一对应。
 - exports是模块统一的接口。
@@ -84,7 +84,7 @@ function Hello() {
 exports.Hello = Hello;
 ```
 
-#### 包
+#### 3.3 包
 
 - 模块和包没有本质区别，包可以理解成是实现了某个功能模块的集合。
 - 创建包。
@@ -103,7 +103,7 @@ exports.hello = function() {
 var somePackage = require('./somepackage');
 somePackage.hello();
 ```
-　　Node.js在调用某个包时，会先检查packpage.json文件中的'main'字段，将其作为包的接口模块。
+Node.js在调用某个包时，会先检查packpage.json文件中的'main'字段，将其作为包的接口模块。
 
 ### 4. 调试
 

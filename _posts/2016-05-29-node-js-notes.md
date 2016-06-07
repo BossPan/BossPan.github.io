@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Node.js开发指南/学习笔记 02
-summary:    Chapter 04
-categories: notes
+summary:    Chapter 04 Node.js 核心模块
+categories: note
 ---
 ## Node.js 核心模块
 
@@ -55,7 +55,7 @@ buffer)])是 POSIX read 函数的封装，相比 fs.readFile 提供了更底层�
 
 ### 5. HTTP 服务器与客户端
 
-#### HTTP 服务器
+#### 5.1 HTTP 服务器
 - http.Server 是 http 模块中的 HTTP 服务器对象。
 - http.Server 的事件：request、connection、close。
 - 最常用的事件是 request，因此 http 提供了捷径： http.createServer([requestListener])
@@ -79,7 +79,7 @@ console.log("HTTP server is listening at port 3000.");
 - http.ServerRequest 是 HTTP 请求的信息，包括data、end、close 事件。
 - http.ServerResponse 是返回给客户端的信息，有三个重要的成员函数response.writeHead(statusCode, [headers])、response.write(data, [encoding])、response.end([data], [encoding])。
 
-#### HTTP 客户端
+#### 5.2 HTTP 客户端
 - http 模块提供了两个函数 http.request 和 http.get，功能是作为客户端向 HTTP 服务器发起请求。
 - http.request(options, callback) ，记得要手动调用 req.end(); 结束请求，否则服务器将不会收到消息
 - http.get 自动将请求方法设置为 get，并且不需要手动调用 req.end()。
