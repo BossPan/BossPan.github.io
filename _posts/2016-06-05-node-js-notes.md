@@ -13,17 +13,19 @@ categories: note
 
 ### 2. 搭建微博网站
 
-首先我想说一下，由于 Node.js 版本不同，对着书上来写，一步步都是坑啊啊啊啊啊啊！
+- 首先我想说一下，由于 Node.js 版本不同，对着书上来写，一步步都是坑啊啊啊啊啊啊！
+- 参考 [connect-middleware](https://github.com/senchalabs/connect#middleware "connect-middleware")
 
 #### 2.1 安装 Express
 
 ```
+$ npm install express
 $ npm install -g express-generator
 ```
 
 #### 2.2 创建以 ejs 为模板引擎的工程
 ```
-$express -e ejs  microblog
+$ express -e ejs  microblog
 ```
 
 #### 2.3 启动服务器（先切换至microblog目录）,任选一个命令

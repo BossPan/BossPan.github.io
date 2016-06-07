@@ -55,7 +55,7 @@ var myModule = require('./module');
 myModule.setName('BYVoid');
 myModule.sayHello(); //'Hello AYVoid'
 ```
-- require不会重复加载模块。
+- require不会重复加载模块。（Node.js 通过文件名缓存所有加载过的文件模块）
 
 ```
 var hello1 = require('./module');
