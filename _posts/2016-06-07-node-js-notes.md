@@ -59,6 +59,7 @@ app.use(function(err, req, res, next) {
 
 - cluster的功能是生成与当
 前进程相同的子进程，并且允许父进程和子进程之间共享端口。
+- [API](https://nodejs.org/docs/latest-v5.x/api/cluster.html)
 
 ### 5. 共享 80 端口
 
