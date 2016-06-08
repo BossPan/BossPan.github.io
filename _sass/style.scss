@@ -26,12 +26,14 @@ p, li {
 	font-size: 1.0rem !important;
 }
 
+/* Code style */
 pre {
-	padding: 0;
-	font-size: 0.6em;
+	padding: 0.5em;
+	font-size: 0.6em;	
 }
+
 .highlight {
-	background-color: #fff;
+	background-color: #23241f;
 }
 
 /* Add paragraph indent*/
@@ -54,4 +56,5 @@ textarea {
 
 .related-post-summary {
 	font-size: 0.6rem !important;
+	text-indent: 0;
 }
