@@ -1,28 +1,20 @@
-# Site settings
 title:       BOSSPAN's Homepage 
-email:       xiaopanwudlut@foxmail.com 
+email:       xiaopanwudlut@sina.com 
 author:      BOSSPAN
 description: "BOSSPAN's Blog About The Front End"
 baseurl:     ""
 url:         "http://bosspan.github.io"
 
-#Duoshuo short Name / 多说的shortname
 duoshuo: bosspan
-
-#Baidu analytics / 百度统计(异步的js码，注意使用异步版本的)
 baidu_analyze: f2650d51e2feb8ab4ec063c520de1ef1
-
-# Google analytics
 google_analytics:
 
-# Optional features
 animated:           true
-show_related_posts: false
-show_post_footers:  false
+show_related_posts: 
+show_post_footers:  
 
-# Social icons
-show_social_icons: false
-github_username: true
+show_social_icons: true
+github_username: bosspan
 twitter_username:
 google_plus_id:
 linkedin_username:
@@ -30,9 +22,8 @@ bitcoin_url:
 paypal_url:
 flattr_button:
 
-# Build settings
 markdown:     kramdown
 permalink:    pretty
-paginate:     10
+paginate:     20
 sass:
-  compressed: true
+compressed: true

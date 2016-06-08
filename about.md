@@ -1,14 +1,10 @@
 ---
 layout: page
-title:  关于作者
+title:  关于我
 permalink: /about/
 no_duoshuo: true
 ---
 
+最近正在找实习啊找实习，
 
-Thanks to the following:
-
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
+快来个公司收了我吧啊啊啊。

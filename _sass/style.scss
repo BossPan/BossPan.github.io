@@ -34,6 +34,24 @@ pre {
 	background-color: #fff;
 }
 
+/* Add paragraph indent*/
 p {
 	text-indent: 2rem;
+}
+
+/* Contact page submit button */
+.mobile-block {
+	width: 100%;
+}
+
+textarea {
+	resize: none;
+}
+/*Related post*/
+.related-post-container {
+	margin-top: 3rem;
+}
+
+.related-post-summary {
+	font-size: 0.6rem !important;
 }
