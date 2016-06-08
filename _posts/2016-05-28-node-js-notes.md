@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记 01
+title:      Node.js开发指南 / 学习笔记 01
 summary:    Chapter 01~03 Node.js 入门
 categories: note
 ---
@@ -14,9 +14,9 @@ categories: note
 
 - [https://nodejs.org/en/](https://nodejs.org/en/)
 
-### 3. Node.js快速入门
+### 3. Node.js 快速入门
 
-#### 3.1 建立HTTP服务器
+#### 3.1 建立 HTTP 服务器
 
 ```
 var http = require('http');
@@ -55,7 +55,7 @@ var myModule = require('./module');
 myModule.setName('BYVoid');
 myModule.sayHello(); //'Hello AYVoid'
 ```
-- require不会重复加载模块。（Node.js 通过文件名缓存所有加载过的文件模块）
+- require 不会重复加载模块。（Node.js 通过文件名缓存所有加载过的文件模块）
 
 ```
 var hello1 = require('./module');
@@ -66,7 +66,7 @@ hello2.setName('BYVoid 2');
 
 hello1.sayHello(); //'Hello BYVoid 2'
 ```
-- 覆盖export，将对象封装到模块中(事实上，exports只是一个普通的空对象)。
+- 覆盖 export，将对象封装到模块中(事实上，exports 只是一个普通的空对象)。
 
 ```
 function Hello() {
@@ -103,7 +103,7 @@ exports.hello = function() {
 var somePackage = require('./somepackage');
 somePackage.hello();
 ```
-Node.js在调用某个包时，会先检查packpage.json文件中的'main'字段，将其作为包的接口模块。
+Node.js 在调用某个包时，会先检查 packpage.json 文件中的 'main' 字段，将其作为包的接口模块。
 
 ### 4. 调试
 

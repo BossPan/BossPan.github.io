@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记 02
+title:      Node.js开发指南 / 学习笔记 02
 summary:    Chapter 04 Node.js 核心模块
 categories: note
 ---

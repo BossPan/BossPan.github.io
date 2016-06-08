@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记 04
+title:      Node.js开发指南 / 学习笔记 04
 summary:    Chapter 06 Node.js 进阶 
 categories: note
 ---
@@ -57,7 +57,7 @@ app.use(function(err, req, res, next) {
 
 ### 4. cluster 模块（利用多核资源）
 
-- cluster的功能是生成与当
+- cluster 的功能是生成与当
 前进程相同的子进程，并且允许父进程和子进程之间共享端口。
 - [API](https://nodejs.org/docs/latest-v5.x/api/cluster.html)
 

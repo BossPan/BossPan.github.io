@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记 05
+title:      Node.js 开发指南 / 学习笔记 05
 summary:    简单总结 
 categories: note
 ---
@@ -13,12 +13,13 @@ categories: note
 - Node.js 的特点
 - 模块和包，模块的加载顺序
 - Node.js 核心模块
-- 使用 Node.js + Web 开发框架（Express）建立一个微博系统，[代码地址](https://github.com/BossPan/microblog)
-	- Mongodb 的了解和使用
+- 如何使用 Node.js + Web 开发框架（Express）建立一个微博系统，[点击查看代码](https://github.com/BossPan/microblog)
+	- Mongodb 了解和使用
+	- Mongodb 的可视化管理工具 Robomongo
 - Node.js 的日志功能 
 - Node.js 多核处理模块 cluster
 
-以后有时间可以学习一下 [从零开始nodejs系列文章](http://blog.fens.me/series-nodejs/)
+以后有时间可以学习一下 [从零开始 nodejs 系列文章](http://blog.fens.me/series-nodejs/)
 
 就到这儿吧！
 

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Node.js开发指南/学习笔记 03
-summary:    Chapter 05 使用Node.js进行Web开发
+title:      Node.js开发指南 / 学习笔记 03
+summary:    Chapter 05 使用 Node.js 进行 Web 开发
 categories: note
 ---
 
@@ -79,7 +79,7 @@ app.use(function(req, res, next) {
 #### 2.8 需要注意的地方
 - title 改为 locals.title，user 同理
 - Connection.DEFAULT_PORT 改为 27017
-- 注意顺序，比如在app.js中 session 应该放在前面
+- 注意顺序，比如在 app.js 中 session 应该放在前面
 
 
 
