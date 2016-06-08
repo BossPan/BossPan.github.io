@@ -10,7 +10,7 @@ baidu_analyze: f2650d51e2feb8ab4ec063c520de1ef1
 google_analytics:
 
 animated:           true
-show_related_posts: 
+show_related_posts: true
 show_post_footers:  
 
 show_social_icons: true
