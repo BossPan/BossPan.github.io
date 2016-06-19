@@ -16,47 +16,46 @@ categories: note
 
 ```
 // clone
-function clone(obj) {
-	// 对于 Function
-	if (obj instanceof Function) {
-        var copy = function () {
-            return obj.apply(this, arguments);
-        };
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                copy[prop] = clone(obj[prop]);
+    function clone(obj) {
+        // 对于 Function
+        if (obj instanceof Function) {
+            var copy = function () {
+                return obj.apply(this, arguments);
+            };
+            for (var prop in obj) {
+                if (obj.hasOwnProperty(prop)) {
+                    copy[prop] = clone(obj[prop]);
+                }
             }
+            return copy;
         }
-        console.log(aaa);
-        return copy;
-    }
-	// null, undefined, String, Boolean, Number
-    if (obj == null || typeof obj !== "object") {
-        return obj;
-    }
-    if (obj instanceof Date) {
-        var copy = new Date();
-        copy.setTime(obj.getTime());
-        return copy;
-    }
-    if (obj instanceof Array) {
-        var copy = [];
-        for (var i = 0; i < obj.length; i++) {
-            copy[i] = clone(obj[i]);
+        // null, undefined, Function, String, Boolean, Number
+        if (obj == null || typeof obj !== "object") {
+            return obj;
         }
-        return copy;
-    }
-    if (obj instanceof Object) {
-        var copy = {};
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                copy[prop] = clone(obj[prop]);
+        if (obj instanceof Date) {
+            var copy = new Date();
+            copy.setTime(obj.getTime());
+            return copy;
+        }
+        if (obj instanceof Array) {
+            var copy = [];
+            for (var i = 0; i < obj.length; i++) {
+                copy[i] = clone(obj[i]);
             }
+            return copy;
         }
-        return copy;
+        if (obj instanceof Object) {
+            var copy = {};
+            for (var prop in obj) {
+                if (obj.hasOwnProperty(prop)) {
+                    copy[prop] = clone(obj[prop]);
+                }
+            }
+            return copy;
+        }
+        throw new Error("Unable to copy " + obj + " ! Its type isn't supported.");
     }
-    throw new Error("Unable to copy " + obj + " ! Its type isn't supported.");
-}
 ```
 
 或者将 Function 的深复制独立出来。
