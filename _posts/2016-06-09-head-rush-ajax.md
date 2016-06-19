@@ -96,7 +96,7 @@ function callback () {
 	- text/xml 但几乎完全没有必要用 xml 送出请求
 - 了解服务器端（如 PHP ） 如何解析 JSON
 - eval 将字符串转换为对象（JSON 文本 -> JSON 对象）-> JSON.stringify
-- escape()、unescape() => encodeURI()、decodeURI()
+- escape()、unescape() -> encodeURI()、decodeURI()
 
 
 
