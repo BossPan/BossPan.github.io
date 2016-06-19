@@ -9,6 +9,8 @@ categories: note
 - Node.js 是一个让 Javascript 运行在服务器端的开发平台。
 - Node.js不运行在浏览器中，不存在 JavaScript 的浏览器兼容性问题，你可以放心地使用 JavaScript 语言的所有特性。
 - Node.js 最大的特点是单线程、异步式 I/O、事件驱动的程序设计模型。
+- 适合用来做 I/O 调度，不太适合用来做复杂计算。
+- [Node.js 优缺点及适用场景讨论](http://www.cnblogs.com/sysuys/p/3460614.html)
 
 ### 2. 安装和配置
 
