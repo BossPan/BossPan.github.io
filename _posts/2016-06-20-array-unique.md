@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      JavaScript 数组去重
-summary:    数组去重方法和性能对比
+summary:    了解数组去重
 categories: note
 ---
 
