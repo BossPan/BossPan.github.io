@@ -15,7 +15,6 @@ categories: note
 - 下面是包装的复制函数
 
 ```
-// clone
     function clone(obj) {
         // 对于 Function
         if (obj instanceof Function) {
@@ -61,18 +60,18 @@ categories: note
 或者将 Function 的深复制独立出来。
 
 ```
-Function.prototype.copy = function() {
-    var that = this;
-    var temp = function() { 
-    	return that.apply(this, arguments); 
-    };
-    for(var key in this) {
-        if (this.hasOwnProperty(key)) {
-            temp[key] = this[key];
+    Function.prototype.copy = function() {
+        var that = this;
+        var temp = function() {
+            return that.apply(this, arguments);
+        };
+        for(var key in this) {
+            if (this.hasOwnProperty(key)) {
+                temp[key] = this[key];
+            }
         }
-    }
-    return temp;
-};
+        return temp;
+    };
 ```
 
 

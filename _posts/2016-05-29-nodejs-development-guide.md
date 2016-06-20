@@ -34,17 +34,17 @@ categories: note
 - fs.readFile(filename,[encoding],[callback(err,data)])。
 
 ```
-//readfileencoding.js
+    //readfileencoding.js
 
-var fs = require('fs');
+    var fs = require('fs');
 
-fs.readFile('content.txt', 'utf-8', function(err, data) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(data);
-  }
-});
+    fs.readFile('content.txt', 'utf-8', function(err, data) {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(data);
+        }
+    });
 ```
 
 - fs.readFileSync(filename, [encoding])是 fs.readFile 同步的版本。
@@ -61,19 +61,19 @@ buffer)])是 POSIX read 函数的封装，相比 fs.readFile 提供了更底层�
 - 最常用的事件是 request，因此 http 提供了捷径： http.createServer([requestListener])
 
 ```
-//httpserver.js
+    //httpserver.js
 
-var http = require('http');
+    var http = require('http');
 
-var server = new http.Server();
-server.on('request', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('<h1>Node.js</h1>');
-  res.end('<p>Hello World</p>');
-});
-server.listen(3000);
+    var server = new http.Server();
+    server.on('request', function(req, res) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write('<h1>Node.js</h1>');
+        res.end('<p>Hello World</p>');
+    });
+    server.listen(3000);
 
-console.log("HTTP server is listening at port 3000.");
+    console.log("HTTP server is listening at port 3000.");
 ```
 
 - http.ServerRequest 是 HTTP 请求的信息，包括data、end、close 事件。

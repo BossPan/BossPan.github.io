@@ -11,49 +11,49 @@ categories: note
 
 ### 创建请求对象 / 发送请求
 ```
-function createRequest() {
-    var httpRequest = null;
-    if (window.XMLHttpRequest) {
-        httpRequest = new XMLHttpRequest();
-    } else if (window.ActiveXObject) {
-        try {
-            httpRequest = new ActiveXObject('Msxml2.XMLHTTP');
-        } catch (e) {
+    function createRequest() {
+        var httpRequest = null;
+        if (window.XMLHttpRequest) {
+            httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
             try {
-                httpRequest = new ActiveXObject('Microsoft.XMLHTTP')
+                httpRequest = new ActiveXObject('Msxml2.XMLHTTP');
             } catch (e) {
+                try {
+                    httpRequest = new ActiveXObject('Microsoft.XMLHTTP')
+                } catch (e) {
+                }
             }
         }
+        if (!httpRequest) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+        return httpRequest;
     }
-    if (!httpRequest) {
-        alert('Giving up :( Cannot create an XMLHTTP instance');
-        return false;
+
+    function sendRequest() {
+        var httpRequest = createRequest();
+        httpRequest.onreadystatechange = callback;
+
+        // GET
+        // 直接在 url 后面添加参数信息 如 url?fname=Henry&lname=Ford
+        // 由于浏览器缓存的存在，可以再添加一个 ID
+        httpRequest.open(method, url, async);
+        httpRequest.send();
+
+        // POST
+        // 必须指定 Content-type
+        httpRequest.open(method, url, async);
+        httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        httpRequest.send(string);
     }
-    return httpRequest;
-}
 
-function sendRequest() {
-    var httpRequest = createRequest();
-    httpRequest.onreadystatechange = callback;
-
-    // GET
-    // 直接在 url 后面添加参数信息 如 url?fname=Henry&lname=Ford
-    // 由于浏览器缓存的存在，可以再添加一个 ID
-    httpRequest.open(method, url, async);
-    httpRequest.send();
-
-    // POST
-    // 必须指定 Content-type
-    httpRequest.open(method, url, async);
-    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    httpRequest.send(string);
-}
-
-function callback () {
-    if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-        // do something
+    function callback() {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+            // do something
+        }
     }
-}
 ```
 
 ### XMLHttpRequest 重要属性 / 方法

@@ -26,33 +26,33 @@ categories: note
 - 回调函数带来的问题
 
 ```
-var fs = require('fs');
-var files = ['a.txt', 'b.txt', 'c.txt'];
+    var fs = require('fs');
+    var files = ['a.txt', 'b.txt', 'c.txt'];
 
-for (var i = 0; i < files.length; i++) {
-fs.readFile(files[i], 'utf-8', function(err, contents) {
-	console.log(files);
-	console.log(i);
-	console.log(files[i]);
-});
-}
+    for (var i = 0; i < files.length; i++) {
+        fs.readFile(files[i], 'utf-8', function (err, contents) {
+            console.log(files);
+            console.log(i);
+            console.log(files[i]);
+        });
+    }
 ```
 
 ### 3. 日志功能
 
 ```
-// 访问日志
-var fs = require('fs');
-var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
-var morgan = require('morgan');
-app.use(morgan('combined', {stream: accessLogStream}));
+    // 访问日志
+    var fs = require('fs');
+    var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
+    var morgan = require('morgan');
+    app.use(morgan('combined', {stream: accessLogStream}));
 
-// 错误日志
-var errorLogStream = fs.createWriteStream(__dirname + '/error.log', {flags: 'a'});
-app.use(function(err, req, res, next) {
-   var meta = '[' + new Date() + '] ' + req.url + '\n';
-   errorLogStream.write(meta + err.stack + '\n');
-});
+    // 错误日志
+    var errorLogStream = fs.createWriteStream(__dirname + '/error.log', {flags: 'a'});
+    app.use(function (err, req, res, next) {
+        var meta = '[' + new Date() + '] ' + req.url + '\n';
+        errorLogStream.write(meta + err.stack + '\n');
+    });
 ```
 
 ### 4. cluster 模块（利用多核资源）

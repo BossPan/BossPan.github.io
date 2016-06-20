@@ -19,20 +19,20 @@ categories: note
 #### 2.1 安装 Express
 
 ```
-$ npm install express
-$ npm install -g express-generator
+    $ npm install express
+    $ npm install -g express-generator
 ```
 
 #### 2.2 创建以 ejs 为模板引擎的工程
 ```
-$ express -e ejs  microblog
+    $ express -e ejs  microblog
 ```
 
 #### 2.3 启动服务器（先切换至microblog目录）,任选一个命令
 ```
-$ node ./bin/www
-$ supervisor ./bin/www
-$ npm start
+    $ node ./bin/www
+    $ supervisor ./bin/www
+    $ npm start
 ```
 
 #### 2.4 网站结构说明
@@ -49,30 +49,30 @@ $ npm start
 #### 2.6 片段视图 partial
 
 ```
-var partials = require('express-partials');
-app.use(partials());
+    var partials = require('express-partials');
+    app.use(partials());
 
-<%- partial('listitem', items) %>
+    <%- partial('listitem', items) %>
 ```
 
 或者用include 代替
 
 ```
-<% items.forEach(function(listitem){ %> <% include listitem %> <% }) %>
+    <% items.forEach(function(listitem){ %> <% include listitem %> <% }) %>
 ```
 
 #### 2.7 视图助手
 ```
-// 视图交互
-app.use(function(req, res, next) {
-      res.locals.user = req.session.user;
-      res.locals.post = req.session.post;
-      var error = req.flash('error');
-      res.locals.error = error.length ? error : null;
+    // 视图交互
+    app.use(function (req, res, next) {
+        res.locals.user = req.session.user;
+        res.locals.post = req.session.post;
+        var error = req.flash('error');
+        res.locals.error = error.length ? error : null;
 
-      var success = req.flash('success');
-      res.locals.success = success.length ? success : null;
-      next();
+        var success = req.flash('success');
+        res.locals.success = success.length ? success : null;
+        next();
     });
 ```
 
