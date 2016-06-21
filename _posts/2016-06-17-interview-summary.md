@@ -1,6 +1,5 @@
 ---
 layout:     post
-title:      第一次面试总结
 summary:    问题和经验
 categories: life
 ---

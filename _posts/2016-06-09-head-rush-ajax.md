@@ -26,9 +26,8 @@ categories: note
             }
         }
         if (!httpRequest) {
-            if (!httpRequest) {
-                throw new Error('HTTP Request Not Supported');
-            }
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
         }
         return httpRequest;
     }
