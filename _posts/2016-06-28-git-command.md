@@ -19,3 +19,4 @@ categories: life
 - `git remote add origin git@server-name:path/repo-name.git` 关联远程库
 - `git push -u origin master` 第一次推送 master 分支的所有内容
 - `git branch` 列出所有分支
+- `git push origin master` 将本地更新推送到远程主机
