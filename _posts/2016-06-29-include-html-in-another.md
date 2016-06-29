@@ -8,13 +8,13 @@ categories: life
 
 ## JavaScript
 
-- 把 html 的内容在 js 文件中 使用 document.write 输出
-- 在需要的地方通过 <script> 标签引入
+- 把 html 的内容在 js 文件中 使用 `document.write` 输出
+- 在需要的地方通过 `<script>` 标签引入
 
 ```
     // header.js
     document.write('\
-		<div class="header">\
+	    <div class="header">\
 			<ul class="nav">\
 				<li>A</li>\
 				<li>B</li>\
@@ -59,7 +59,7 @@ categories: life
 		$(document).ready(function () {
 			$('body').load('header.html');
 		});
-	</script>
+    </script>
 ```
 
 ## 参考目录
