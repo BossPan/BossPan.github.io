@@ -5,6 +5,6 @@ permalink: /about/
 no_duoshuo: true
 ---
 
-最近正在找实习啊找实习，
+目前在 [北京未来云科技有限公司](http://www.tagcare.com/index.html) 实习。
 
-快来个公司收了我吧啊啊啊。
+加油加油加油！
