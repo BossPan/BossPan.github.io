@@ -7,6 +7,7 @@ categories: life
 
 - `git init`
 - `git add`
+- `git add --all`
 - `git commit -m"summary"`
 - `git status`
 - `git diff`
