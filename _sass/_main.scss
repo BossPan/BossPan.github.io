@@ -14,7 +14,7 @@
 */
 
 body {
-  font-family: Microsoft YaHei, "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: Microsoft YaHei, sans-serif;
 }
 
 html, body {
@@ -42,7 +42,6 @@ img {
 
 body {
   font-size: 1.5rem;
-
           box-sizing: border-box;
      -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -131,7 +130,7 @@ body {
 .pagination,
 .button {
   font-size: 1rem;
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Microsoft YaHei, sans-serif;
   font-weight: 300;
   text-align: center;
 }
@@ -194,7 +193,7 @@ body {
 }
 
 form {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Microsoft YaHei, sans-serif;
   font-weight: 300;
   font-size: 1rem;
 }
@@ -215,7 +214,7 @@ abbr {
 }
 
 pre, code {
-  font-family: Menlo, Monaco, "Courier New", monospace
+  font-family: Microsoft YaHei, sans-serif;
 }
 
 code {
@@ -247,24 +246,6 @@ blockquote footer {
   background-color: #fff;
   color: #7a7a7a;
   border-color: transparent;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
-  /*margin: 1.414em 0 0.5em;*/
 }
 
 .social-icons {
@@ -438,7 +419,7 @@ footer,
 footer .wrap {
   color: #7a7a7a;
   background-color: #fafafa;
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Microsoft YaHei, sans-serif;
   font-weight: 300;
   clear: both;
 }

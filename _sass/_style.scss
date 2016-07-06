@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 h1, .h1 {
 	font-size: 1.5rem !important;
 }
@@ -26,7 +28,7 @@ p, li {
 	font-size: 1.0rem !important;
 }
 
-/* Code style */
+// Code style
 pre {
 	padding: 0.5em;
 	font-size: 0.6em;	
@@ -36,10 +38,10 @@ pre {
 	background-color: #23241f;
 }
 
-/* Add paragraph indent*/
+// Add paragraph indent
 
 
-/* Contact page submit button */
+// Contact page submit button
 .mobile-block {
 	width: 100%;
 }
@@ -47,7 +49,7 @@ pre {
 textarea {
 	resize: none;
 }
-/*Related post*/
+// Related post
 .related-post-container {
 	margin-top: 3rem;
 }
