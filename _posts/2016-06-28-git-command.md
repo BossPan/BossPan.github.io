@@ -20,3 +20,4 @@ categories: life
 - `git push -u origin master` 第一次推送 master 分支的所有内容
 - `git branch` 列出所有分支
 - `git push origin master` 将本地更新推送到远程主机
+- `git pull origin master` 从远程主机拉取最新文件
