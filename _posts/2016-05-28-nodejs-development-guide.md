@@ -59,7 +59,7 @@ categories: note
 ```
 - require 不会重复加载模块。（Node.js 通过文件名缓存所有加载过的文件模块）
 
-```
+``` JavaScript
     var hello1 = require('./module');
     hello1.setName('BYVoid');
 

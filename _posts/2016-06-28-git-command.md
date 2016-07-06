@@ -7,10 +7,11 @@ categories: life
 
 - `git init`
 - `git add`
+- `git add --all`
 - `git commit -m"summary"`
 - `git status`
 - `git diff`
-- `git reset --hard HEAD^/~n/commitid`版本回退
+- `git reset --hard HEAD^/~n/commitid` 版本回退
 - `git reflog` 查看命令历史
 - `git checkout file` 取消工作区的修改/从版本库恢复删除的文件到最新版本
 - `git reset HEAD file` 将暂存区回退到工作区

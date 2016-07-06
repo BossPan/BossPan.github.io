@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      网站导航栏共用的解决方案
+title:      网站导航栏共用
 summary:    如何在一个 html 文件中引用另一个 html 文件
-categories: life
+categories: note
 ---
 
 
@@ -13,16 +13,16 @@ categories: life
 
 ```
     // header.js
-    document.write('\
-	    <div class="header">\
-			<ul class="nav">\
-				<li>A</li>\
-				<li>B</li>\
-				<li>C</li>\
-				<li>D</li>\
-			</ul>\
-		</div>\
-    ');
+    document.write(`
+    <div class="header">
+        <ul class="nav">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+    </div>
+`);
 ```
 
 ## PHP / ASP
@@ -40,15 +40,15 @@ categories: life
 ```
     // getHeader.js
     function sendRequest(method, url, data) {
-	    // ...
-	    function callback() {
-	        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-	            document.body.innerHTML = httpRequest.responseText;
-	        }
+		// ...
+	  function callback() {
+	    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+		  document.body.innerHTML = httpRequest.responseText;
 	    }
+	  }
     }
     sendRequest('get', '../html/header.html', null);
-    
+
     // 页面引用
     <script src="../js/getHeader.js"></script>
 ```
@@ -56,9 +56,9 @@ categories: life
 
 ```
     <script>
-		$(document).ready(function () {
-			$('body').load('header.html');
-		});
+	  $(document).ready(function () {
+	  	$('body').load('header.html');
+	  });
     </script>
 ```
 
