@@ -1,58 +1,64 @@
 ---
 layout:     post
 title:      深入浅出Ajax / 学习笔记
-summary:    Ajax 入门
+summary:    Ajax 入门， Ajax 方法封装
 categories: note
 ---
 
 花了几个小时把书看完了，当时 Web 入门的书看的是那本 Head First HTML/CSS，所以对这系列的书存有好感， 但感觉这类风格的书不太适合现在的自己了...因为实在是太墨迹了...下面是笔记正文...
 
-## [XMLHttpRequest 对象](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+### 封装 Ajax 方法
+```javascript
+function sendRequest(opt) {
+    opt = opt || {};
+    opt.method = opt.method || 'GET';
+    opt.url = opt.url || null;
+    opt.async = opt.async || true;
+    opt.data = opt.data || null;
+    opt.success = opt.success || function() {};
+    opt.fail = opt.fail || function() {};
 
-### 创建请求对象 / 发送请求
-```
-    function createRequest() {
-        var httpRequest = null;
-        if (window.XMLHttpRequest) {
-            httpRequest = new XMLHttpRequest();
-        } else if (window.ActiveXObject) {
-            try {
-                httpRequest = new ActiveXObject('Msxml2.XMLHTTP');
-            } catch (e) {
-                try {
-                    httpRequest = new ActiveXObject('Microsoft.XMLHTTP')
-                } catch (e) {
-                }
-            }
-        }
-        if (!httpRequest) {
-                throw new Error('HTTP Request Not Supported');
-            }
-        return httpRequest;
+    var xhttp = null;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    } else {
+        // IE 5, IE 6
+        xhttp = new ActiveXObject('Microsoft.XMLHTTP');
     }
 
-    function sendRequest() {
-        var httpRequest = createRequest();
-        httpRequest.onreadystatechange = callback;
+    // 参数拼接
+    var params = [];
+    for (var key in opt.data) {
+        params.push(key + '=' + opt.data[key]);
+    }
+    var postData = params.join('&');
 
-        // GET
+    // 发送请求
+    if (opt.method.toUpperCase() == 'GET') {
         // 直接在 url 后面添加参数信息 如 url?fname=Henry&lname=Ford
-        // 由于浏览器缓存的存在，可以再添加一个 ID
-        httpRequest.open(method, url, async);
-        httpRequest.send();
-
-        // POST
+        // 由于浏览器缓存的存在，可以添加一个时间戳 timestamp
+        postData += postData ? '&' : '';
+        postData += 'timestamp=' + new Date().getTime();
+        xhttp.open(opt.method, opt.url + '?' + postData, opt.async);
+        xhttp.send(null);
+    } else if (opt.method.toUpperCase() == 'POST') {
+        xhttp.open(opt.method, opt.url, opt.async);
         // 必须指定 Content-type
-        httpRequest.open(method, url, async);
-        httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        httpRequest.send(string);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send(postData);
     }
 
-    function callback() {
-        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-            // do something
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4) {
+            if (xhttp.status == 200) {
+                // console.log(xhttp.responseText);
+                opt.success(xhttp.responseText);
+            } else {
+                opt.fail();
+            }
         }
     }
+}
 ```
 
 ### XMLHttpRequest 重要属性 / 方法
@@ -71,13 +77,13 @@ categories: note
 ## [JSON](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - JavaScript Object Notation
 - JSON 与 Javascript 的区别
-	- 对象/数组：属性名称必须用双引号包裹；最后一个属性后面不能有逗号。
-	- 数值：前导0不能使用；小数点后面至少有一个数字。
-	- 字符串：只有有限的字符能够被转义;通常不允许控制字符; 但允许使用Unicode 行分隔符 (U+2028) 和段落分隔符 (U+2029) ; 字符串必须用双引号括起来。
+  - 对象/数组：属性名称必须用双引号包裹；最后一个属性后面不能有逗号。
+  - 数值：前导0不能使用；小数点后面至少有一个数字。
+  - 字符串：只有有限的字符能够被转义;通常不允许控制字符; 但允许使用Unicode 行分隔符 (U+2028) 和段落分隔符 (U+2029) ; 字符串必须用双引号括起来。
 - JSON.parse(text[, reviver])
-	- 将一个 JSON 字符串解析成为一个 JavaScript 值。在解析过程中，还可以选择性的修改某些属性的原始解析值。
+  - 将一个 JSON 字符串解析成为一个 JavaScript 值。在解析过程中，还可以选择性的修改某些属性的原始解析值。
 - JSON.stringigy(value[, replacer [, space]])
-	- 可以将任意的 JavaScript 值序列化成 JSON 字符串。
+  - 可以将任意的 JavaScript 值序列化成 JSON 字符串。
 
 ## 重点回顾
 
@@ -91,18 +97,23 @@ categories: note
 - get 最大长度 2KB
 - POST 只比 GET 请求安全一点点，都需要额外的安全层如 SSL，才能保护数据的安全以免被人窥视。
 - Content-Type 
-	- x-www-form-urlenconded （名值对）
-	- text/xml 但几乎完全没有必要用 xml 送出请求
+  - x-www-form-urlenconded （名值对）
+  - text/xml 但几乎完全没有必要用 xml 送出请求
 - 了解服务器端（如 PHP ） 如何解析 JSON
 - eval 将字符串转换为对象（JSON 文本 -> JSON 对象）-> JSON.stringify
 - escape()、unescape() -> encodeURI()、decodeURI()
 
 
+##  参考目录
+
+- [原生JS封装ajax方法](http://www.cnblogs.com/a757956132/p/5603176.html)
 
 
+- [Ajax入门（二）Ajax函数封装](http://guowenfh.github.io/2015/12/18/Ajax-elementary-course-2-fn/)
+- [开始](https://developer.mozilla.org/zh-CN/docs/AJAX/Getting_Started)
+- [XMLHttpRequest 对象](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 
 
- 
 
 
 
