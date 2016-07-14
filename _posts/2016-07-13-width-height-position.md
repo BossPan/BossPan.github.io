@@ -2,7 +2,7 @@
 layout:     post
 title:      元素的尺寸和坐标
 summary:    width, innerWidth, clientWidth, offsetWidth, scrollWidth
-categories: note css
+categories: note javascript
 ---
 
 记得当时读 `JavaScript权威指南` 看到这么多相似的属性，我打心底拒绝的...
@@ -19,13 +19,14 @@ categories: note css
 
 - getBoundingClientRect()
 - 返回一个有left 、right 、top和bottom属性的对象。left和top属性表示元素的左上角的X和Y坐标， right和bottom属性表示元素的右下角的X和Y坐标。
-- getBoundingClientRect() 返回的对象还包含width和height属性，但是在原始的IE中未实现。为了简便起见，可以这样计算元素的width和height
+- getBoundingClientRect() 返回的对象还包含width和height属性，但是在原始的IE中未实现。为了简便起见，可以这样计算元素的width和height。
 
-```JavaScript
+```
 var box = e.getBoundingClientRect();
 var w = box.width || (box.right - box.left);
 var h = box.height || (box.bottom - box.top);
 ```
+
 
 ### offsetWidth/Height
 
@@ -46,23 +47,23 @@ var h = box.height || (box.bottom - box.top);
 ```
 // 获取元素视口坐标的兼容性方案
 function getElementPos(elt) {
-	var x = 0,
-		y = 0;
-	//循环以累加偏移量
-	for (var e = elt; e != null; e = e.offsetParent) {
-		x += e.offsetLeft;
-		Y += e.offsetTop;
-	}
-	//再次循环所有的祖先元素，减去滚动的偏移量
-	//这也减去了主滚动条，并转换为视口坐标
-	for (var e = elt.parentNode; e != null && e.nodeType == 1; e = e.parentNode) {
-		x -= e.scrollLeft;
-		y -= e.scrollTop;
-		return {
-			x: x,
-			y: y
-		};
-	}
+    var x = 0,
+        y = 0;
+    //循环以累加偏移量
+    for (var e = elt; e != null; e = e.offsetParent) {
+        x += e.offsetLeft;
+        y += e.offsetTop;
+    }
+    //再次循环所有的祖先元素，减去滚动的偏移量
+    //这也减去了主滚动条，并转换为视口坐标
+    for (var e = elt.parentNode; e != null && e.nodeType == 1; e = e.parentNode) {
+        x -= e.scrollLeft;
+        y -= e.scrollTop;
+        return {
+            x: x,
+            y: y
+        };
+    }
 }
 ```
 
@@ -76,9 +77,9 @@ function getElementPos(elt) {
 
 - 元素的内边距的外边缘和它的边框的外边缘之间的水平距离和垂直距离，通常这些值就等于左边和上边的边框宽度。
 - 如果元素有滚动条，并且浏览器将这些滚动条放置在左侧或顶部(可这不太常见) ，clientLeft/Top 也就包含了滚动条的宽度。
-- 对于内联元素，总是为0 。
+- 对于内联元素，总是为0。
 
-###scrollWidth/Height
+### scrollWidth/Height
 
 - 元素的内容区域加上它的内边距再加上任何**溢出内容的尺寸**。
 - 当内容正好和内容区域匹配而没有溢出时，这些属性与 clientWidth/Height 是相等的。但当溢出时，它们就包含溢出的内容，返回值比 clientWidth/Height 要大。
@@ -103,17 +104,11 @@ function getElementPos(elt) {
 
 ```
 // 获取窗口的视口尺寸viewport的兼容性方案
-var w = window.innerWidth
+// 标准 strict 模式
+// 怪异模式的IE
+var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;  
 
-|| document.documentElement.clientWidth // 标准 strict 模式的IE
-
-|| document.body.clientWidth;  // 怪异模式的IE
-
-var h = window.innerHeight
-
-|| document.documentElement.clientHeight 
-
-|| document.body.clientHeight;
+var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 ```
 
 ### window.outerWidth/Height
@@ -132,18 +127,25 @@ var h = window.innerHeight
 // 获取滚动条位置的兼容性方案
 function getScrollOffsets(w) {
     w = w || window;
-    
-    if (w.pageXOffset != null) return {x: w.pageXOffset, y:w.pageYOffset};
-    
+
+    if (w.pageXOffset != null) return {
+        x: w.pageXOffset,
+        y: w.pageYOffset
+    };
+
     var d = w.document;
     if (document.compatMode == "css1Compat")
-        return {x:d.documentElement.scrollLeft, y:d.documentElement.scrollTop};
-        
-    return { x: d.body.scrollLeft, y: d.body.scrollTop };
+        return {
+            x: d.documentElement.scrollLeft,
+            y: d.documentElement.scrollTop
+        };
+
+    return {
+        x: d.body.scrollLeft,
+        y: d.body.scrollTop
+    };
 }
 ```
-
-
 
 ### document.documentElement.offsetWidth/Height
 
@@ -160,8 +162,6 @@ function getScrollOffsets(w) {
 ### 参考附录
 
 - `JavaScript权威指南` 15.8 文档和元素的几何形状和滚动
-
-
 - [A tale of two viewports — part one](http://www.quirksmode.org/mobile/viewports.html)
 - [A tale of two viewports — part two](http://www.quirksmode.org/mobile/viewports2.html)
 - [Window innerWidth and innerHeight Properties](http://www.w3schools.com/jsref/prop_win_innerheight.asp)
