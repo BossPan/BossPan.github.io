@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Node.js 开发指南 / 学习笔记 05
+title:      Node.js开发指南 / 学习笔记 05
 summary:    简单总结 
 categories: note
 ---
