@@ -169,4 +169,5 @@ $.fn.shadow.defaults = {
 
 - `jQuery基础教程 第四版`
 - [如何自己开发一款js或者jquery插件](http://www.haorooms.com/post/js_jquery_chajian)
-- [Javascript插件开发的一些感想和心得](http://luopq.com/2016/02/04/think-js-plugin/
+- [Javascript插件开发的一些感想和心得](http://luopq.com/2016/02/04/think-js-plugin/)
+
