@@ -1,3 +1,3 @@
-# BOSSPAN'S Homepage
-## 主题设置为Pixyll
+# BOSSPAN'S BLOG
+## Jekyll Theme - Pixyll
 
