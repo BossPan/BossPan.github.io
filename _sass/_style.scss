@@ -1,31 +1,39 @@
 @charset "UTF-8";
 
+h1, .h1,		
+h2, .h2,		
+h3, .h3,		
+h4, .h4,		
+h5, .h5,		
+h6, .h6 {		
+	font-weight: 200;		
+}  
 h1, .h1 {
-	font-size: 1.5rem !important;
+	font-size: 1.5rem;
 }
 
 h2, .h2 {
-	font-size: 1.4rem !important;
+	font-size: 1.4rem;
 }
 
 h3, .h3 {
-	font-size: 1.2rem !important;
+	font-size: 1.2rem;
 }
 
 h4, .h4 {
-	font-size: 1rem !important;
+	font-size: 1rem;
 }
 
 h5, .h5 {
-	font-size: 0.9rem !important;
+	font-size: 0.9rem;
 }
 
 h6, .h6 {
-	font-size: 0.8rem !important;
+	font-size: 0.8rem;
 }
 
 p, li {
-	font-size: 1.0rem !important;
+	font-size: 1.0rem;
 }
 
 // Code style
@@ -37,9 +45,6 @@ pre {
 .highlight {
 	background-color: #23241f;
 }
-
-// Add paragraph indent
-
 
 // Contact page submit button
 .mobile-block {
@@ -66,4 +71,14 @@ textarea {
 }
 .footer {
 	margin-top: 150px;
+}
+
+table {
+	margin: 16px 0;		
+ 	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #aaa;		
+ 	padding: 5px;
 }
