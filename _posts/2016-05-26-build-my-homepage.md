@@ -1,5 +1,4 @@
 ---
-layout:     post
 title:      搭建博客
 summary:    终于在 Github 上搭建好了。
 categories: life

@@ -41,10 +41,10 @@ categories: note
 - 模板文件 index.ejs
 - 页面框架 layout.ejs，默认被所有模板文件继承
 
-![Express网站架构](/images/nodejs/structure-of-express.png)
+![Express网站架构](/img/nodejs/structure-of-express.png)
 
 #### 2.5 模板引擎
-![模板引擎在MVC架构中的位置](/images/nodejs/model.png)
+![模板引擎在MVC架构中的位置](/img/nodejs/model.png)
 
 #### 2.6 片段视图 partial
 

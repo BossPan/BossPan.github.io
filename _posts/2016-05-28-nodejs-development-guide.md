@@ -1,9 +1,9 @@
 ---
-layout:     post
 title:      Node.js开发指南 / 学习笔记 01
 summary:    Chapter 01~03 Node.js 入门
-categories: note
+categories: note javascript node.js
 ---
+
 ### 1. Node.js 简介
 
 - Node.js 是一个让 Javascript 运行在服务器端的开发平台。

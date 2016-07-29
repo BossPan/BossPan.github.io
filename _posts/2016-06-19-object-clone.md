@@ -2,7 +2,7 @@
 layout:     post
 title:      JavaScript 对象复制
 summary:    对象的深复制和浅复制
-categories: note
+categories: Note JavaScript
 ---
 
 ## 浅复制

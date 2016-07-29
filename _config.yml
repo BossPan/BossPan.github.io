@@ -23,7 +23,15 @@ paypal_url:
 flattr_button:
 
 markdown:     kramdown
-permalink:    pretty
+permalink:    none
 paginate:     20
 sass:
 compressed: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -1,0 +1,33 @@
+---
+title: 归档
+layout: default
+---
+<div class="posttext">
+  {% for post in site.posts %}
+    {% capture ym %}{{ post.date | date:"%Y年%m月" }}{% endcapture %}
+    {% if year != ym %}
+      {% assign year = ym %}
+      <li><a href="#{{ ym }}">{{ ym }}</a></li>
+    {% endif %}
+  {% endfor %}
+</div>
+<div class="post">
+    <div class="posttext">
+        <ul>
+            {% for post in site.posts %}
+            {% capture ym %}{{ post.date | date:"%Y年%m月" }}{% endcapture %}
+            {% if year != ym %}
+            {% assign year = ym %}
+            </ul>
+            <blockquote id="{{ ym }}">{{ ym }}</blockquote>
+            <ul>
+            {% endif %}
+            <li>
+              <time datetime="{{ post.date }}">{{ post.date | date:"%m 月 %d 日" }}</time>
+              <a href="{{ post.url }}" title="{{ post.title }}">&nbsp;&nbsp;{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="postfooter"></div>
+</div>

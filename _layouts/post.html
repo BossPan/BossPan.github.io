@@ -9,13 +9,12 @@ layout: default
 
 <div class="post-header mb2">
   {% if page.hide_title %}
-	<!-- title is hide -->
   {% else %}
   <h1 class="py2">{{ page.title }}</h1>
   {% endif %}
   <span class="post-meta">{{ page.date | date: "%m月 %d日, %Y" }}</span><br>
   {% if page.update_date %}
-    <span class="post-meta">Updated: {{ page.update_date | date: "%m月 %d日, %Y" }}</span><br>
+    <span class="post-meta">更新时间: {{ page.update_date | date: "%m月 %d日, %Y" }}</span><br>
   {% endif %}
   <span class="post-meta small">{{ minutes }} minute read</span>
 </div>
@@ -26,18 +25,4 @@ layout: default
 
 {% if site.show_post_footers %}
   {% include post_footer.html %}
-{% endif %}
-
-{% if site.show_related_posts %}
-  <div class="related-post-container">
-    <h5 class="related-post-title">相关文章</h5>
-  {% for post in site.related_posts %}
-    <div class="post ml2">
-      <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-        <h6 class="post-title">{{ post.title }}</h6>
-        <p class="related-post-summary">{{ post.summary }}</p>
-      </a>
-    </div>
-  {% endfor %}
-  </div>
 {% endif %}

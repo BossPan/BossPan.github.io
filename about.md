@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  关于我
-permalink: /about/
+permalink: /about.html
 no_duoshuo: true
 ---
 
