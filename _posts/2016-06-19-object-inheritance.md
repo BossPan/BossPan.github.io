@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      JavaScript 对象创建与继承
 summary:    对象创建、继承方法总结
-categories: note
+categories: JavaScript
+tags:       Note JavaScript
 ---
 
 ## 一 对象创建 

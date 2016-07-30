@@ -1,23 +1,23 @@
 ---
 title:      RequireJS 入门
 summary:    JavaScript 模块化、RequireJS
-categories: note javascript
-tags:       JavaScript RequireJS
+categories: JavaScript RequireJS
+tags:       Note JavaScript RequireJS
 ---
 
 原始需求是这样的：每个页面都需要引入好几个JS文件，每个文件之间存在依赖，并且其中有一些是相同文件，我们知道这样会增加HTTP请求次数，减慢网站的加载速度，所以我需要一种类似于sass的import语法的解决方案。
 
-### 为什么需要模块化
+## 为什么需要模块化
 
 - 网站正在变成网络应用，代码复杂度随着网站变大而增加，代码组织变难了
 - 开发者希望 JS 文件模块化
 - 部署时又希望将代码优化进一到数次 HTTP 请求
 
-### JavaScript 模块化进程
+## JavaScript 模块化进程
 
 从无模块化时代 -> 模块萌芽（自执行函数、YUI命名空间、jQuery匿名自执行函数）-> 源自Node.js的CommonJS -> Modules/Transport、RequireJS(AMD)、SeaJS(CMD) -> 面向未来的ES6模块标准
 
-### RequireJS 入门
+## RequireJS 入门
 
 1.使用RequireJS
 
@@ -58,10 +58,9 @@ node r.js -o build.js
 r.js -o baseUrl=. paths.requireLib=./require name=main include=requireLib out=main-built.js
 ```
 
-### 参考目录
+## 参考目录
 
 - [js模块化历程](http://www.cnblogs.com/lvdabao/p/js-modules-develop.html)
 - [为何用 Web 模块的方式？](http://cyj.me/why-seajs/requirejs/)
 - [REQUIREJS API](http://requirejs.org/docs/api.html)
 - [RequireJS中文网](http://www.requirejs.cn/)
-

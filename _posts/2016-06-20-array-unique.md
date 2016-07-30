@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      JavaScript 数组去重
 summary:    了解数组去重
-categories: note
+categories: JavaScript
+tags:       Note JavaScript 学习笔记
 ---
 
 考虑数组去重这个问题，JavaScript 里最容易想到的方法应该是下面这个

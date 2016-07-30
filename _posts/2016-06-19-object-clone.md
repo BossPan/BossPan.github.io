@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      JavaScript 对象复制
 summary:    对象的深复制和浅复制
-categories: Note JavaScript
+categories: JavaScript
+tags:       Note JavaScript 学习笔记
 ---
 
 ## 浅复制
@@ -73,27 +73,3 @@ categories: Note JavaScript
         return temp;
     };
 ```
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

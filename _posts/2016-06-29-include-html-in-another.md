@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      网站导航栏共用
 summary:    如何在一个 html 文件中引用另一个 html 文件
-categories: note
+categories: HTML
+tags:       Note HTML
 ---
 
 

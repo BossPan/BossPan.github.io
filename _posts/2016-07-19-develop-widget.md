@@ -1,13 +1,13 @@
 ---
-layout:     post
 title:      JavaScript 插件开发
 summary:    JavaScript 插件开发，jQuery 插件开发
-categories: note javascript
+categories: JavaScript
+tags:       Note JavaScript
 ---
 
 最近要为页面写一个分页的功能，在网上看了几个 jQuery 分页插件的效果，发现跟项目的需求不太相符，权衡了一下，还是决定自己写。虽然不如高手写的那么完美，但至少更轻量级一些，更适合自己手里的这个项目，还能锻炼自己的能力。
 
-从 JavaScript 插件说起
+## 从 JavaScript 插件说起
 
 需要注意的几个点：
 
@@ -36,7 +36,7 @@ categories: note javascript
 })(window);
 ```
 
-关于 jQuery 插件开发
+## 关于 jQuery 插件开发
 
 在插件中使用$别名
 
@@ -161,13 +161,12 @@ $.fn.shadow.defaults = {
 };
 ```
 
-插件编写实践
+## 插件编写实践
 
-未完待续。
+分页插件编写实践。
 
-参考目录
+## 参考目录
 
 - `jQuery基础教程 第四版`
 - [如何自己开发一款js或者jquery插件](http://www.haorooms.com/post/js_jquery_chajian)
 - [Javascript插件开发的一些感想和心得](http://luopq.com/2016/02/04/think-js-plugin/)
-

@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      元素的尺寸和坐标
 summary:    width, innerWidth, clientWidth, offsetWidth, scrollWidth
-categories: note javascript
+categories: JavaScript
+tags:       Note JavaScript
 ---
 
 记得当时读 `JavaScript权威指南` 看到这么多相似的属性，我打心底拒绝的...
@@ -26,7 +26,6 @@ var box = e.getBoundingClientRect();
 var w = box.width || (box.right - box.left);
 var h = box.height || (box.bottom - box.top);
 ```
-
 
 ### offsetWidth/Height
 

@@ -2,7 +2,8 @@
 title: 归档
 layout: default
 ---
-<div class="posttext">
+
+<div>
   {% for post in site.posts %}
     {% capture ym %}{{ post.date | date:"%Y年%m月" }}{% endcapture %}
     {% if year != ym %}
@@ -12,7 +13,7 @@ layout: default
   {% endfor %}
 </div>
 <div class="post">
-    <div class="posttext">
+    <div>
         <ul>
             {% for post in site.posts %}
             {% capture ym %}{{ post.date | date:"%Y年%m月" }}{% endcapture %}
@@ -29,5 +30,4 @@ layout: default
             {% endfor %}
         </ul>
     </div>
-    <div class="postfooter"></div>
 </div>

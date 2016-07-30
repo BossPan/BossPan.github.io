@@ -1,8 +1,8 @@
 ---
-layout:     post
 title:      Git 常用命令
 summary:    记录常用的 Git 命令，方便查询。
-categories: life
+categories: Git
+tags:       Note Git
 ---
 
 - `git init`
@@ -11,7 +11,8 @@ categories: life
 - `git commit -m "<Commit Message>"`
 - `git status` 
 - `git diff`
-- `git reset --hard HEAD^/~n/<commitid>`版本回退
+- `git reset --hard HEAD^/~n/<commitid>` 版本回退 
+- `git revert HEAD/<commitid>` 撤销提交，并生成一次新的提交
 - `git reflog` 查看命令历史
 - `git checkout --<filename>` 取消工作区的修改/从版本库恢复删除的文件到最新版本
 - `git checkout <branchname>` 切换分支

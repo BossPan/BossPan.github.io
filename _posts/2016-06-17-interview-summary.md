@@ -1,7 +1,8 @@
 ---
-layout:     post
+title:      Interview Summary
 summary:    问题和经验
-categories: life
+categories: Interview
+tags:       面试
 ---
 
 2016/06/17

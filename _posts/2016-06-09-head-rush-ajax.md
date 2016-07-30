@@ -1,13 +1,13 @@
 ---
-layout:     post
-title:      深入浅出Ajax / 学习笔记
+title:      深入浅出Ajax 
 summary:    Ajax 入门， Ajax 方法封装
-categories: note
+categories: JavaScript Ajax
+tags:       JavaScript Ajax 学习笔记
 ---
 
 花了几个小时把书看完了，当时 Web 入门的书看的是那本 Head First HTML/CSS，所以对这系列的书存有好感， 但感觉这类风格的书不太适合现在的自己了...因为实在是太墨迹了...下面是笔记正文...
 
-### 封装 Ajax 方法
+## 封装 Ajax 方法
 ```javascript
 function sendRequest(opt) {
     opt = opt || {};
@@ -61,7 +61,7 @@ function sendRequest(opt) {
 }
 ```
 
-### XMLHttpRequest 重要属性 / 方法
+## XMLHttpRequest 重要属性 / 方法
 - onreadystatechange
 - readystate
 - status
@@ -107,31 +107,6 @@ function sendRequest(opt) {
 ##  参考目录
 
 - [原生JS封装ajax方法](http://www.cnblogs.com/a757956132/p/5603176.html)
-
-
 - [Ajax入门（二）Ajax函数封装](http://guowenfh.github.io/2015/12/18/Ajax-elementary-course-2-fn/)
 - [开始](https://developer.mozilla.org/zh-CN/docs/AJAX/Getting_Started)
 - [XMLHttpRequest 对象](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
