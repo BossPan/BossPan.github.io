@@ -27,8 +27,8 @@ tags:       面试
 
 - 跨域解决方案有哪些 
   + CORS(H5 Access-Control-Allow-Origin)
-  + postMessage 
-  + iframe 
+  + postMessage
+  + iframe
 
 - 响应式布局 Media Query
   + IE 8 及以下不支持

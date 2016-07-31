@@ -5,15 +5,14 @@ categories: HTML
 tags:       Note HTML
 ---
 
-
 ## JavaScript
 
 - 把 html 的内容在 js 文件中 使用 `document.write` 输出
 - 在需要的地方通过 `<script>` 标签引入
 
 ```
-    // header.js
-    document.write(`
+// header.js
+document.write(`
     <div class="header">
         <ul class="nav">
             <li>A</li>
@@ -30,7 +29,7 @@ tags:       Note HTML
 - include 引入文件
 
 ```
-    <?php include 'header.php';?>
+<?php include 'header.php';?>
 ```
 
 ## Ajax / jQuery
@@ -38,28 +37,28 @@ tags:       Note HTML
 - Ajax 加载内容
 
 ```
-    // getHeader.js
-    function sendRequest(method, url, data) {
-		// ...
-	  function callback() {
-	    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-		  document.body.innerHTML = httpRequest.responseText;
-	    }
-	  }
+// getHeader.js
+function sendRequest(method, url, data) {
+	// ...
+  function callback() {
+    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+	  document.body.innerHTML = httpRequest.responseText;
     }
-    sendRequest('get', '../html/header.html', null);
+  }
+}
+sendRequest('get', '../html/header.html', null);
 
-    // 页面引用
-    <script src="../js/getHeader.js"></script>
+// 页面引用
+<script src="../js/getHeader.js"></script>
 ```
 - $().load();
 
 ```
-    <script>
-	  $(document).ready(function () {
-	  	$('body').load('header.html');
-	  });
-    </script>
+<script>
+  $(document).ready(function () {
+  	$('body').load('header.html');
+  });
+</script>
 ```
 
 ## 参考目录

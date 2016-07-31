@@ -15,61 +15,61 @@ tags:       Note JavaScript 学习笔记
 - 下面是包装的复制函数
 
 ```
-    function clone(obj) {
-        // 对于 Function
-        if (obj instanceof Function) {
-            var copy = function () {
-                return obj.apply(this, arguments);
-            };
-            for (var prop in obj) {
-                if (obj.hasOwnProperty(prop)) {
-                    copy[prop] = clone(obj[prop]);
-                }
+function clone(obj) {
+    // 对于 Function
+    if (obj instanceof Function) {
+        var copy = function () {
+            return obj.apply(this, arguments);
+        };
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                copy[prop] = clone(obj[prop]);
             }
-            return copy;
         }
-        // null, undefined, Function, String, Boolean, Number
-        if (obj == null || typeof obj !== "object") {
-            return obj;
-        }
-        if (obj instanceof Date) {
-            var copy = new Date();
-            copy.setTime(obj.getTime());
-            return copy;
-        }
-        if (obj instanceof Array) {
-            var copy = [];
-            for (var i = 0; i < obj.length; i++) {
-                copy[i] = clone(obj[i]);
-            }
-            return copy;
-        }
-        if (obj instanceof Object) {
-            var copy = {};
-            for (var prop in obj) {
-                if (obj.hasOwnProperty(prop)) {
-                    copy[prop] = clone(obj[prop]);
-                }
-            }
-            return copy;
-        }
-        throw new Error("Unable to copy " + obj + " ! Its type isn't supported.");
+        return copy;
     }
+    // null, undefined, Function, String, Boolean, Number
+    if (obj == null || typeof obj !== "object") {
+        return obj;
+    }
+    if (obj instanceof Date) {
+        var copy = new Date();
+        copy.setTime(obj.getTime());
+        return copy;
+    }
+    if (obj instanceof Array) {
+        var copy = [];
+        for (var i = 0; i < obj.length; i++) {
+            copy[i] = clone(obj[i]);
+        }
+        return copy;
+    }
+    if (obj instanceof Object) {
+        var copy = {};
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                copy[prop] = clone(obj[prop]);
+            }
+        }
+        return copy;
+    }
+    throw new Error("Unable to copy " + obj + " ! Its type isn't supported.");
+}
 ```
 
 或者将 Function 的深复制独立出来。
 
 ```
-    Function.prototype.copy = function() {
-        var that = this;
-        var temp = function() {
-            return that.apply(this, arguments);
-        };
-        for(var key in this) {
-            if (this.hasOwnProperty(key)) {
-                temp[key] = this[key];
-            }
-        }
-        return temp;
+Function.prototype.copy = function() {
+    var that = this;
+    var temp = function() {
+        return that.apply(this, arguments);
     };
+    for(var key in this) {
+        if (this.hasOwnProperty(key)) {
+            temp[key] = this[key];
+        }
+    }
+    return temp;
+};
 ```
