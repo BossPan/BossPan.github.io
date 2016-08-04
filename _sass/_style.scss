@@ -36,18 +36,18 @@ p, li {
 	font-size: 1.0rem;
 }
 
-// Code style
 pre {
 	padding: 0.5rem;
 	font-size: 1rem;
 	overflow: auto;
 }
-.hljs {
-	overflow: hidden;
-}
 
 .highlight {
 	background-color: #23241f;
+	// background-color: #444;
+}
+.hljs-comment {
+	color: #aeaeae;
 }
 
 textarea {
@@ -79,4 +79,8 @@ th, td {
 .tags a {
 	padding: 0 10px;
 	font-size: 1rem;
+}
+
+ul {
+	margin-bottom: 0;
 }
