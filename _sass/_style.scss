@@ -44,7 +44,9 @@ pre {
 
 .highlight {
 	background-color: #23241f;
-	// background-color: #444;
+}
+.hljs {
+	overflow: visible;
 }
 .hljs-comment {
 	color: #aeaeae;
