@@ -2,7 +2,7 @@
 title:      JavaScript 对象创建与继承
 summary:    对象创建、继承方法总结
 categories: JavaScript
-tags:       Note JavaScript
+tags:       JavaScript 学习笔记
 ---
 
 ## 一 对象创建 

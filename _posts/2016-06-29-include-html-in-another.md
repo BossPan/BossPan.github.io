@@ -2,7 +2,7 @@
 title:      网站导航栏共用
 summary:    如何在一个 html 文件中引用另一个 html 文件
 categories: HTML
-tags:       Note HTML
+tags:       HTML 学习笔记
 ---
 
 ## JavaScript

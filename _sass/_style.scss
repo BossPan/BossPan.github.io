@@ -11,23 +11,18 @@ h6, .h6 {
 h1, .h1 {
 	font-size: 1.5rem;
 }
-
 h2, .h2 {
 	font-size: 1.4rem;
 }
-
 h3, .h3 {
 	font-size: 1.2rem;
 }
-
 h4, .h4 {
 	font-size: 1rem;
 }
-
 h5, .h5 {
 	font-size: 0.9rem;
 }
-
 h6, .h6 {
 	font-size: 0.8rem;
 }
@@ -40,6 +35,7 @@ pre {
 	padding: 0.5rem;
 	font-size: 1rem;
 	overflow: auto;
+	border-radius: 1px;
 }
 
 .highlight {
@@ -81,8 +77,4 @@ th, td {
 .tags a {
 	padding: 0 10px;
 	font-size: 1rem;
-}
-
-ul {
-	margin-bottom: 0;
 }

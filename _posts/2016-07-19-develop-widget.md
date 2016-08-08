@@ -2,7 +2,7 @@
 title:      JavaScript 插件开发
 summary:    JavaScript 插件开发，jQuery 插件开发
 categories: JavaScript
-tags:       Note JavaScript
+tags:       JavaScript 学习笔记
 ---
 
 最近要为页面写一个分页的功能，在网上看了几个 jQuery 分页插件的效果，发现跟项目的需求不太相符，权衡了一下，还是决定自己写。虽然不如高手写的那么完美，但至少更轻量级一些，更适合自己手里的这个项目，还能锻炼自己的能力。

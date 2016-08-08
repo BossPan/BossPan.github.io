@@ -2,7 +2,7 @@
 title:      Git 常用命令
 summary:    记录常用的 Git 命令，方便查询。
 categories: Git
-tags:       Note Git
+tags:       Git
 ---
 
 - `git init`

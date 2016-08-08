@@ -2,7 +2,7 @@
 title:      RequireJS 入门
 summary:    JavaScript 模块化、RequireJS
 categories: JavaScript RequireJS
-tags:       Note JavaScript RequireJS
+tags:       JavaScript RequireJS 学习笔记
 ---
 
 原始需求是这样的：每个页面都需要引入好几个JS文件，每个文件之间存在依赖，并且其中有一些是相同文件，我们知道这样会增加HTTP请求次数，减慢网站的加载速度，所以我需要一种类似于sass的import语法的解决方案。

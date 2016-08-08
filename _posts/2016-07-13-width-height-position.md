@@ -2,7 +2,7 @@
 title:      元素的尺寸和坐标
 summary:    width, innerWidth, clientWidth, offsetWidth, scrollWidth
 categories: JavaScript
-tags:       Note JavaScript
+tags:       JavaScript 学习笔记
 ---
 
 记得当时读 `JavaScript权威指南` 看到这么多相似的属性，我打心底拒绝的...
