@@ -1,0 +1,13 @@
+<div>
+    <hr>
+    <div>
+        {% if page.previous %}
+        <p><span>上一篇</span> <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }}</a></p>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.next %}
+        <p><span>下一篇</span> <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }}</a></p>
+        {% endif %}
+    </div>
+</div>

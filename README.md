@@ -1,2 +1,2 @@
-# BOSSPAN'S Homepage
+# My Blog
 ## Jekyll Theme - Pixyll

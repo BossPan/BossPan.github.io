@@ -1,4 +1,4 @@
-title:       BOSSPAN'S BLOG 
+title:       BOSSPAN
 email:       xiaopanwudlut@foxmail.com 
 author:      BOSSPAN
 description: "BOSSPAN's Blog About The Front End"
@@ -13,7 +13,7 @@ animated:           true
 show_related_posts: 
 show_post_footers:  
 
-show_social_icons: true
+show_social_icons: 
 github_username: bosspan
 twitter_username:
 google_plus_id:

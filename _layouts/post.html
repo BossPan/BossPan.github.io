@@ -8,21 +8,23 @@ layout: default
 {% endif %}
 
 <div class="post-header mb2">
-  {% if page.hide_title %}
-  {% else %}
-  <h1 class="py2">{{ page.title }}</h1>
-  {% endif %}
-  <span class="post-meta">{{ page.date | date: "%m月 %d日, %Y" }}</span><br>
-  {% if page.update_date %}
+    {% if page.hide_title %}
+    {% else %}
+    <h1 class="py2">{{ page.title }}</h1>
+    {% endif %}
+    <span class="post-meta">{{ page.date | date: "%m月 %d日, %Y" }}</span><br>
+    {% if page.update_date %}
     <span class="post-meta">更新时间: {{ page.update_date | date: "%m月 %d日, %Y" }}</span><br>
-  {% endif %}
-  <span class="post-meta small">{{ minutes }} minute read</span>
+    {% endif %}
+    <span class="post-meta small">{{ minutes }} minute read</span>
 </div>
 
 <article class="post-content">
-  {{ content }}
+    {{ content }}
 </article>
 
 {% if site.show_post_footers %}
-  {% include post_footer.html %}
+{% include post_footer.html %}
 {% endif %}
+
+{% include pre_next.html %}
