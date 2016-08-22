@@ -161,9 +161,77 @@ $.fn.shadow.defaults = {
 };
 ```
 
-## 插件编写实践
+## 分页插件编写实践
 
-分页插件编写实践。
+```
+;
+(function() {
+	var options = {
+		numPerPage: 10,
+		curPage: 0,
+		maxPage: 0,
+		minPage: 0,
+		sortDirection: 1
+	};
+	var api = {
+		config: options,
+		init: function(opt) {
+			for (var key in opt) {
+				options[key] = opt[key];
+			}
+			options.maxPage = Math.floor(opt.data.length / options.numPerPage);
+
+			var numSpan = document.getElementById('numPerPage');
+			var maxPage = document.getElementById('maxPage');
+			numSpan.innerHTML = options.numPerPage;
+			maxPage.innerHTML = options.maxPage + 1;
+
+			var paginationDiv = document.getElementById('page-nav');
+			EventUtil.addHandler(paginationDiv, 'click', pageHandler);
+
+			options.render(options.curPage);
+		}
+	};
+
+	function pageHandler(event) {
+		var target = EventUtil.getTarget(event);
+		var id = target.getAttribute('ID');
+		switch (id) {
+			case 'pre':
+				if (options.curPage == options.minPage) return;
+				options.curPage--;
+				break;
+			case 'next':
+				if (options.curPage == options.maxPage) return;
+				options.curPage++;
+				break;
+			case 'first':
+				options.curPage = options.minPage;
+				break;
+			case 'last':
+				options.curPage = options.maxPage;
+				break;
+			case 'page-to':
+				var page = document.getElementById('page-input').value - 1;
+				if (page >= options.minPage && page <= options.maxPage) {
+					options.curPage = page;
+				}
+				break;
+		}
+		options.render(options.curPage);
+	}
+	this.pagination = api;
+})();
+```
+
+调用方法
+
+```javascript
+pagination.init({
+	data: userData,
+	render: renderList
+});
+```
 
 ## 参考目录
 

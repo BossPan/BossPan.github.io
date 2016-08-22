@@ -36,6 +36,7 @@ IE6下浮动元素在浮动方向上与父元素边界接触元素的外边距�
 |              border-radius               |      |      |      |  √   |      |
 |                autofocus                 |      |      |      |      |  √   |
 |               placeholder                |      |      |      |      |  √   |
+|                  flex布局                  |      |      |      |      | √(P) |
 
 ## 背景透明文字不透明
 

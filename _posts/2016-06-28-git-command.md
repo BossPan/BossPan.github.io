@@ -16,6 +16,8 @@ tags:       Git
 - `git reflog` 查看命令历史
 - `git checkout --<filename>` 取消工作区的修改/从版本库恢复删除的文件到最新版本
 - `git checkout <branchname>` 切换分支
+- `git checkout -b <branckname>` 创建并切换到新分支
+- `git branch -D <branckname>` 删除分支
 - `git reset HEAD <filename>` 将暂存区回退到工作区
 - `rm <filename>` 从文件管理器中删除文件
 - `git rm <filename>` 从版本库中删除文件(记得 git commit)

@@ -41,3 +41,4 @@ element.addEventListener(type, handler, false);
 - table tbody tr td 之间的依赖关系
 - innerText firefox45+ 支持
 - IE11 不支持 ``
+- ES5 严格模式中禁止使用 arguments.callee()
