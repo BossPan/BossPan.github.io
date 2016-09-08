@@ -6,7 +6,7 @@ permalink: /about.html
 
 大连理工大学准大四学生，信息管理与信息系统专业。
 
-目前在 [北京未来云科技有限公司](http://www.tagcare.com/index.html) 实习。
+目前正在努力找工作中。
 
 ## 联系我
 
