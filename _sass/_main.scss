@@ -1,17 +1,5 @@
 @charset "UTF-8";
-/*
 
-  Pixyll
-
-  A simple, beautiful theme for Jekyll that emphasizes content rather than
-  aesthetic fluff.
-
-  Best served with BASSCSS (http://jxnblk.github.io/basscss)
-
-  Crafted with <3 by John Otander (@4lpine) - ©2014 John Otander
-  MIT License http://opensource.org/licenses/MIT
-
-*/
 html, body {
   height: 100%;
 }
@@ -344,7 +332,7 @@ blockquote footer {
   }
 
   .site-header .site-title {
-    float: center;
+    text-align: center;
   }
 
   .site-header .site-nav {
