@@ -4,14 +4,14 @@ title:  关于
 permalink: /about.html
 ---
 
-大连理工大学准大四学生，信息管理与信息系统专业。
+大连理工大学大四学生，信息管理与信息系统专业。
 
-目前正在努力找工作中。
+正在努力找工作中，Fighting!!!
 
 ## 联系我
 
 - GitHub: [bosspan](https://github.com/bosspan)
-- Email: xiaopanwudlut@foxmail.com
+- Email: 1356101589@qq.com
 - Weibo: [xiaopanwudlut](http://weibo.com/u/5035168036)
 - Zhihu: [xiaopanwudlut](https://www.zhihu.com/people/xiaopanwudlut)
 
