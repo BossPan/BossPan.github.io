@@ -2,7 +2,7 @@
 title:      排序算法
 summary:    常用排序算法JS实现
 categories: JavaScript Algorithm
-tags:       JavaScript Algorithm
+tags:       JavaScript Algorithm 算法
 ---
 
 ## 复杂度和稳定性

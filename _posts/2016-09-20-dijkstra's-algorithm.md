@@ -2,7 +2,7 @@
 title:      Dijkstra 算法
 summary:    Dijkstra 算法JS实现、最短路径问题
 categories: JavaScript Algorithm
-tags:       JavaScript Algorithm Dijkstra
+tags:       JavaScript Algorithm 算法 Dijkstra 
 ---
 
 ## JS代码实现

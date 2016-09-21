@@ -1,6 +1,6 @@
 ---
 title:      JavaScript 数组去重
-summary:    了解数组去重
+summary:    数组去重的方法总结
 categories: JavaScript
 tags:       JavaScript 学习笔记
 ---
