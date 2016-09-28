@@ -97,7 +97,7 @@ function getElementPos(elt) {
 
 ### window.innerWidth/Height
 
-- 浏览器窗口的宽度和高度（不包括工具栏、滚动条）
+- 浏览器窗口的宽度和高度（包括滚动条）
 - 以css pixels 度量
 - IE 8 及以下不支持
 

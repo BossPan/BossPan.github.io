@@ -1,12 +1,13 @@
 ---
-title:      瀑布流布局
-summary:    瀑布流布局的实现
+title:      等宽瀑布流布局
+summary:    等宽瀑布流布局的实现
 categories: CSS Layout
 tags:       CSS JavaScript Layout 网页布局
 ---
 
 ##  关键点
 
+- 计算显示的列数
 - 对每一个数据块进行定位
 - 判断数据加载的条件
 
@@ -97,10 +98,11 @@ function repostion() {
             // 计算最短列
             minHeight = Math.min.apply(null, heightArr);
             minIndex = heightArr.indexOf(minHeight);
+            // 对图片进行定位
             items[i].style.position = 'absolute';
-            items[i].style.left = minIndex * itemWidth + 'px';
+            items[i].style.left = minIndex * itemWidth + 'px'; // items[minIndex].offsetLeft
             items[i].style.top = heightArr[minIndex] + 'px';
-            // 更新列高
+            // 更新数组
             heightArr[minIndex] += items[i].offsetHeight;
         }
     }
@@ -144,7 +146,7 @@ function checkScroll() {
         last = items[items.length - 1];
     var lastH = last.offsetTop + Math.floor(last.offsetHeight / 2),
         scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
-        documentH = window.innerHeight || document.documentElement.innerHeight || document.body.innerHeight;
+        documentH = window.innerHeight || document.documentElement.offsetHeight || document.body.clientHeight;
     // 当最后一张图片显示一半时，加载数据
     return lastH < scrollTop + documentH;
 }
