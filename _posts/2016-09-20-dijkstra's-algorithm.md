@@ -5,6 +5,11 @@ categories: JavaScript Algorithm
 tags:       JavaScript Algorithm 算法 Dijkstra 
 ---
 
+## 复杂度
+
+时间复杂度O(n<sup>2</sup>),空间复杂度（邻接矩阵）O(n<sup>2</sup>)
+
+
 ## JS代码实现
 
 ```javascript
@@ -77,7 +82,11 @@ function shortestPathDijkstra(matrix, v0) {
 
 ## 测试用例
 
+如下图所示
+
 ![Dijkstra算法测试用例](/img/dijkstra-example.jpg)
+
+测试结果
 
 ```javascript
 // 测试用例
