@@ -152,7 +152,7 @@ function checkScroll() {
 }
 ```
 
-## 参考附录
+## 参考目录
 
 - [瀑布流布局浅析](http://www.68design.net/Web-Guide/HTMLCSS/58734-1.html)
 - [瀑布流布局 - 慕课网](http://www.imooc.com/learn/101)

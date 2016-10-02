@@ -158,7 +158,7 @@ function getScrollOffsets(w) {
 - screenX/Y：从用户显示器窗口原点到事件触发点的设备 pixels
 - IE不支持 pageX/Y,IE 使用 css pixels 来度量 screenX/Y
 
-### 参考附录
+### 参考目录
 
 - `JavaScript权威指南` 15.8 文档和元素的几何形状和滚动
 - [A tale of two viewports — part one](http://www.quirksmode.org/mobile/viewports.html)

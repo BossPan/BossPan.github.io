@@ -122,12 +122,10 @@ shortestPathDijkstra(matrix, 6); // [24, 25, 14, 9, 4, 16, 0]
 ```
 
 
-## 参考附录
+## 参考目录
 
 - [Dijkstra's algorithm再理解](http://shmilyaw-hotmail-com.iteye.com/blog/2316491)
-
 - [算法学习 - Dijkstra's Algorithm](http://blog.csdn.net/stanfordzhang/article/details/6626584)
-
 - [迪杰斯特拉最短路径算法 严蔚敏C++实现](http://blog.csdn.net/ariessurfer/article/details/10554581)​
 
   ​

@@ -6,15 +6,27 @@ tags:       JavaScript 学习笔记
 ---
 
 ## 浅复制
+
 - 只复制一份引用/结构，所有引用对象都指向一份数据，并且都可以修改这份数据。
 
+```javascript
+function shallowCopy(parent) {
+    var copy = {};
+    for (var i in parent) {
+        copy[i] = parent[i];
+    }
+    return copy;
+}
+```
+
 ## 深度复制
+
 - 为结构和数据创建副本，并指向这个副本，此后的操作都在副本上进行，不会影响到复制源。
 - 基本包装类型（Number、Boolean、String）可以通过普通赋值方式实现。
 - 需要注意的是，重写某个引用类型，只是将该变量指针指向别处。
 - 下面是包装的复制函数
 
-```
+```javascript
 function clone(obj) {
     // 对于 Function
     if (obj instanceof Function) {
@@ -59,7 +71,7 @@ function clone(obj) {
 
 或者将 Function 的深复制独立出来。
 
-```
+```javascript
 Function.prototype.copy = function() {
     var that = this;
     var temp = function() {

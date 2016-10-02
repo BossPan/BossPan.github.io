@@ -1,6 +1,6 @@
 ---
 title:      网站导航栏
-summary:    多个HTML文件如何实现导航栏公用
+summary:    如何实现导航栏复用
 categories: HTML
 tags:       HTML 学习笔记
 ---

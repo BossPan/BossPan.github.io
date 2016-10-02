@@ -104,7 +104,7 @@ for (i = 0, len = rows.length; i < len; i++) {
 }
 ```
 
-## 参考附录
+## 参考目录
 
 - [网页上的摄影展:等高响应布局实现](http://isux.tencent.com/high-equal-response-layout-html.html)
 - [非等宽图片列表的布局](http://stylechen.com/not-fixed-width-imglist-layout.html)
