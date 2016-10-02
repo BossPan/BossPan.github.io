@@ -49,6 +49,10 @@ console.log(instance.getSuperValue());   //true
 
 ![原型链示意图](/img/prototype-chain-example.png)
 
+原型链在Chrome中的实现。
+
+![__proto__](/img/prototype-chrome.png)
+
 ## 为什么继承时需要显式设置SubType.prototype.constructor
 
 重写子类的原型对象时，默认的原型对象constructor属性被删除，此时获取实例的constructor属性将通过原型链查找，在SuperType.prototype中找到，值为SuperType。
