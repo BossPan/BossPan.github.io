@@ -2,7 +2,7 @@
 title:      等高瀑布流布局
 summary:    等高瀑布流布局的实现
 categories: CSS Layout
-tags:       CSS JavaScript Layout 网页布局
+tags:       CSS JavaScript 网页布局
 ---
 
 ##  关键点

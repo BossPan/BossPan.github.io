@@ -1,11 +1,9 @@
 ---
-title:      深入浅出Ajax 
+title:      深入浅出 Ajax 
 summary:    Ajax 入门， Ajax 方法封装
 categories: JavaScript Ajax
 tags:       JavaScript Ajax 学习笔记
 ---
-
-花了几个小时把书看完了，当时 Web 入门的书看的是那本 Head First 的入门书，所以对这系列的书存有好感， 但感觉这类风格的书不太适合现在的自己了...因为实在是太墨迹了...下面是笔记正文...
 
 ## 封装 Ajax 方法
 

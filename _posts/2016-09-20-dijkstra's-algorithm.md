@@ -1,6 +1,6 @@
 ---
-title:      Dijkstra 算法
-summary:    Dijkstra 算法JS实现、最短路径问题
+title:      Dijkstra算法
+summary:    Dijkstra 算法 JS 实现、最短路径问题
 categories: JavaScript Algorithm
 tags:       JavaScript Algorithm 算法 Dijkstra 
 ---
@@ -127,5 +127,3 @@ shortestPathDijkstra(matrix, 6); // [24, 25, 14, 9, 4, 16, 0]
 - [Dijkstra's algorithm再理解](http://shmilyaw-hotmail-com.iteye.com/blog/2316491)
 - [算法学习 - Dijkstra's Algorithm](http://blog.csdn.net/stanfordzhang/article/details/6626584)
 - [迪杰斯特拉最短路径算法 严蔚敏C++实现](http://blog.csdn.net/ariessurfer/article/details/10554581)​
-
-  ​

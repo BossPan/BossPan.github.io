@@ -7,7 +7,7 @@ tags:       JavaScript 学习笔记
 
 最近要为页面写一个分页的功能，在网上看了几个 jQuery 分页插件的效果，发现跟项目的需求不太相符，权衡了一下，还是决定自己写。虽然不如高手写的那么完美，但至少更轻量级一些，更适合自己手里的这个项目，还能锻炼自己的能力。
 
-## 从 JavaScript 插件说起
+## JavaScript 原生插件
 
 需要注意的几个点：
 
@@ -29,14 +29,14 @@ tags:       JavaScript 学习笔记
 
 ```javascript
 ;
-(function(window) {
-	var app = {};
-	// ...
-	window.plugin = app;
+(function (window) {
+    var app = {};
+    // ...
+    window.plugin = app;
 })(window);
 ```
 
-## 关于 jQuery 插件开发
+## jQuery 插件开发
 
 在插件中使用$别名
 
@@ -49,10 +49,10 @@ tags:       JavaScript 学习笔记
 添加新的全局函数
 
 ```javascript
-(function($) {
-	$.sum = function(array) {
-		//在这里添加代码
-	};
+(function ($) {
+    $.sum = function (array) {
+        //在这里添加代码
+    };
 })(jQuery);
 
 // 调用方法
@@ -64,38 +64,38 @@ $.sum();
 1.扩展全局jQuery对象
 
 ```javascript
-(function($) {
-	$.extend({
-		sum: function(array) {
+(function ($) {
+    $.extend({
+        sum: function (array) {
 
-		},
-		average: function(array) {
+        },
+        average: function (array) {
 
-		}
-	});
+        }
+    });
 })(jQuery);
 ```
 
 2.使用命名空间隔离函数
 
 ```javascript
-(function($) {
-	$.mathUtils = {
-		sum: function(array) {
-			
-		},
-		average: function(array) {
-			
-		}
-	};
+(function ($) {
+    $.mathUtils = {
+        sum: function (array) {
+
+        },
+        average: function (array) {
+
+        }
+    };
 })(jQuery);
 ```
 
 添加jQuery对象方法
 
 ```javascript
-jQuery.fn.myMethod = function() {
-	
+jQuery.fn.myMethod = function () {
+
 };
 // jQuery.fn 对象是jQuery.prototype的别名
 ```
@@ -107,13 +107,13 @@ jQuery.fn.myMethod = function() {
 2.隐式迭代
 
 ```javascript
-(function($) {
-	$.fn.swapClass = function() {
-		this.each(function() {
-			var $element = $(this);
-			//
-		});
-	};
+(function ($) {
+    $.fn.swapClass = function () {
+        this.each(function () {
+            var $element = $(this);
+            //
+        });
+    };
 })(jQuery);
 ```
 
@@ -122,13 +122,13 @@ jQuery.fn.myMethod = function() {
 在所有插件方法中返回一个jQuery对象，除非相应的方法明显用于取得不同的信息
 
 ```javascript
-(function($) {
-	$.fn.swapClass = function() {
-		return this.each(function() {
-			var $element = $(this);
-			//
-		});
-	};
+(function ($) {
+    $.fn.swapClass = function () {
+        return this.each(function () {
+            var $element = $(this);
+            //
+        });
+    };
 })(jQuery);
 ```
 
@@ -138,8 +138,8 @@ jQuery.fn.myMethod = function() {
 
 ```javascript
 var defaults = {
-	copies: 5,
-	opacity: 0.1
+    copies: 5,
+    opacity: 0.1
 };
 var options = $.extend(defaults, opts);
 ```
@@ -150,77 +150,77 @@ var options = $.extend(defaults, opts);
 var options = $.extend({}, $.fn.shadow.defaults, opts);
 // 默认值被放在了投影插件的命名空间里，可以通过$.fn.shadow.defaults直接引用。
 $.fn.shadow.defaults = {
-	copies: 5,
-	opacity: 0.1,
-	copyOffset: function(index) {
-		return {
-			x: index,
-			y: index
-		};
-	}
+    copies: 5,
+    opacity: 0.1,
+    copyOffset: function (index) {
+        return {
+            x: index,
+            y: index
+        };
+    }
 };
 ```
 
-## 分页插件编写实践
+## 原生分页插件编写实践
 
-```
+```javascript
 ;
-(function() {
-	var options = {
-		numPerPage: 10,
-		curPage: 0,
-		maxPage: 0,
-		minPage: 0,
-		sortDirection: 1
-	};
-	var api = {
-		config: options,
-		init: function(opt) {
-			for (var key in opt) {
-				options[key] = opt[key];
-			}
-			options.maxPage = Math.floor(opt.data.length / options.numPerPage);
+(function () {
+    var options = {
+        numPerPage: 10,
+        curPage: 0,
+        maxPage: 0,
+        minPage: 0,
+    };
+    var api = {
+        config: options,
+        init: function (opt) {
+            for (var key in opt) {
+                options[key] = opt[key];
+            }
+            options.maxPage = Math.floor(opt.data.length / options.numPerPage);
 
-			var numSpan = document.getElementById('numPerPage');
-			var maxPage = document.getElementById('maxPage');
-			numSpan.innerHTML = options.numPerPage;
-			maxPage.innerHTML = options.maxPage + 1;
+            var numSpan = document.getElementById('numPerPage');
+            var maxPage = document.getElementById('maxPage');
+            numSpan.innerHTML = options.numPerPage;
+            maxPage.innerHTML = options.maxPage + 1;
 
-			var paginationDiv = document.getElementById('page-nav');
-			EventUtil.addHandler(paginationDiv, 'click', pageHandler);
+            var paginationDiv = document.getElementById('page-nav');
+            EventUtil.addHandler(paginationDiv, 'click', pageHandler);
 
-			options.render(options.curPage);
-		}
-	};
+            options.render(options.curPage);
+        }
+    };
 
-	function pageHandler(event) {
-		var target = EventUtil.getTarget(event);
-		var id = target.getAttribute('ID');
-		switch (id) {
-			case 'pre':
-				if (options.curPage == options.minPage) return;
-				options.curPage--;
-				break;
-			case 'next':
-				if (options.curPage == options.maxPage) return;
-				options.curPage++;
-				break;
-			case 'first':
-				options.curPage = options.minPage;
-				break;
-			case 'last':
-				options.curPage = options.maxPage;
-				break;
-			case 'page-to':
-				var page = document.getElementById('page-input').value - 1;
-				if (page >= options.minPage && page <= options.maxPage) {
-					options.curPage = page;
-				}
-				break;
-		}
-		options.render(options.curPage);
-	}
-	this.pagination = api;
+    function pageHandler(event) {
+        var target = EventUtil.getTarget(event);
+        var id = target.getAttribute('ID');
+        switch (id) {
+            case 'pre':
+                if (options.curPage == options.minPage) return;
+                options.curPage--;
+                break;
+            case 'next':
+                if (options.curPage == options.maxPage) return;
+                options.curPage++;
+                break;
+            case 'first':
+                options.curPage = options.minPage;
+                break;
+            case 'last':
+                options.curPage = options.maxPage;
+                break;
+            case 'page-to':
+                var page = document.getElementById('page-input').value - 1;
+                if (page >= options.minPage && page <= options.maxPage) {
+                    options.curPage = page;
+                }
+                break;
+        }
+        options.render(options.curPage);
+    }
+
+    this.pagination = api;
 })();
 ```
 

@@ -1,5 +1,5 @@
 ---
-title:      Node.js开发指南
+title:      Node.js 开发指南
 summary:    摘录书中一些知识点。
 categories: JavaScript Node.js
 tags:       JavaScript Node.js 学习笔记

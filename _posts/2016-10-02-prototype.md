@@ -1,5 +1,5 @@
 ---
-title:      深入理解原型链
+title:      理解 JavaScript 的原型机制
 summary:    prototype, constructor, instanceof
 categories: JavaScript
 tags:       JavaScript
@@ -49,17 +49,43 @@ console.log(instance.getSuperValue());   //true
 
 ![原型链示意图](/img/prototype-chain-example.png)
 
-原型链在Chrome中的实现。
+原型链在浏览器中的实现。
 
 ![__proto__](/img/prototype-chrome.png)
 
 ## 为什么继承时需要显式设置SubType.prototype.constructor
 
-重写子类的原型对象时，默认的原型对象constructor属性被删除，此时获取实例的constructor属性将通过原型链查找，在SuperType.prototype中找到，值为SuperType。
+重写子类的原型对象时，默认的原型对象constructor属性被删除，此时获取实例的constructor属性，通过原型链查找，可以在SuperType.prototype中找到，值为SuperType。这和我们期望的SubType不符，因此需要显式设置其值。
+
+## 通过new操作符调用构造函数的实际过程是什么
+
+1.创建一个新对象
+
+```
+var obj = {}; 
+```
+
+2.实现这个新对象的一个内部属性[[prototype]]，Firefox、Safari、Chrome实现为__proto__。假设构造函数为Constructor。
+
+```javascript
+obj.__proto__ = Constructor.prototype;
+```
+
+
+
+3.在obj上执行构造函数中的代码（为这个新对象添加属性）
+
+```javascript
+Constructor.call(obj);
+```
+
+4.返回这个新对象
+
+
 
 ## 如何确定一个实例的类型
 
-object instanceof constructor 检测 `constructor.prototype `是否存在于对象的原型链上。
+object instanceof Constructor，检测 `Constructor.prototype `是否存在于对象的原型链上。
 
 或者使用isPrototypeOf()，如下例所示。
 

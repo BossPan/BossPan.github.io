@@ -39,27 +39,33 @@ var person1 = createPerson("Nicholas", 29, "Software Engineer");
 
 ### 3. 构造函数模式
 
-没有实现函数复用。
+解决了对象标识的问题，但没有实现实例之间方法的共享。
 
 ```javascript
-function Person(name) {
+function Person(name, age, job){
     this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function(){
+        alert(this.name);
+    };    
 }
-var p = new Person();
 ```
 
-new 操作符的执行过程
+因此想到将方法定义在全局作用域中。
 
+```javascript
+function Person(name, age, job){
+    // ...
+    this.sayName = sayName;
+}
+
+function sayName(){
+    alert(this.name);
+}
 ```
-// 创建一个新对象
-var obj = {}; 
-// 实现这个新对象的一个内部属性[[prototype]]，Firefox、Safari、Chrome实现为__proto__
-obj.__proto__ = Person.prototype;
-// 在obj上执行构造函数中的代码（为这个新对象添加属性）
-Person.call(obj);
-// 返回这个新对象
-return obj;
-```
+
+这种方法存在的问题是：sayName()是一个全局函数，却只能在对象上调用，这让它的全局作用域名不副实。而且，这种方法显然缺乏封装性。而原型模式可以解决这些问题。
 
 ### 4. 原型模式
 
@@ -76,7 +82,13 @@ Person.prototype.sayName = function(){
 
 当属性较多时可以直接重写prototype对象，但这样会切断构造函数与最初原型之间的联系。
 
-在重写之前创建的实例的[[prototype]]属性仍然指向最初原型，obj.constructor === A 的值也仍然是true，而在重写之后创建的实例的[[prototype]]属性指向新的原型，并且constructor属性因为重写而将直接指向`function Object() {}`，而不再是A，因此最好在重写时显式设置为A。
+在没有显式设置constructor的情况下：
+
+对于在重写原型对象之前创建的实例，[[prototype]]属性仍然指向最初原型，`obj.constructor === Person` 的值仍然是true，但`obj instanceof Person`返回false。
+
+而对于在重写之后创建的实例，[[prototype]]属性指向新的原型，并且constructor属性因为重写而将直接指向`function Object() {}`，而不再是Person，`obj instanceof Person`返回true。
+
+最好是在重写时显式设置为A。
 
 ```javascript
 function Person(){
