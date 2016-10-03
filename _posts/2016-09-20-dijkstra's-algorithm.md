@@ -1,5 +1,5 @@
 ---
-title:      Dijkstra算法
+title:      Dijkstra 算法
 summary:    Dijkstra 算法 JS 实现、最短路径问题
 categories: JavaScript Algorithm
 tags:       JavaScript Algorithm 算法 Dijkstra 
