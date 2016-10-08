@@ -19,23 +19,23 @@ cookie数据会自动在Web浏览器和Web服务器之间传输，因此服务�
 
 ### cookie的构成
 
-#### 名称
+1.名称
 
 不区分大小写，需要经过URL编码。
 
-#### 值
+2.值
 
 需要经过URL编码。
 
-#### 域 domain
+3.域 domain
 
 指定cookie生效的域。domain=".example.com"
 
-#### 路径 path
+4.路径 path
 
 指定cookie生效的路径，访问指定域中的指定路径时，应该向服务器发送cookie。
 
-#### 失效时间 expires
+5.失效时间 expires
 
 表示cookie何时应该被删除的时间戳。默认情况下，如果没有为cookie设置该属性，则在浏览器关闭（注意不是标签页）时将cookie删除。设置了该属性的cookie，将在指定时间呗删除，如果设置的是一个过去的时间，则cookie将被立刻删除。
 
