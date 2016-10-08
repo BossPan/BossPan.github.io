@@ -14,7 +14,7 @@ tags:       CSS JavaScript 网页布局
 
 ### 数据加载
 
-```
+```javascript
 var count = 0;
 for (i = 0; i < data.list.length; i++) {
     var img = document.createElement('img');
@@ -32,7 +32,7 @@ for (i = 0; i < data.list.length; i++) {
 
 ### 根据浏览器宽度，制定出标准高度
 
-```
+```javascript
 // 根据浏览器宽度，制定出标准高度referHeight
 var sumWidth = document.documentElement.clientWidth || document.body.clientWidth;
 var referHeight;
@@ -47,7 +47,7 @@ if (sumWidth >= 1920) {
 
 ### 将所有图片等比变化到该高度
 
-```
+```javascript
 // 对所有图片基于referHeight进行等比例缩放
 var imgLists = container.getElementsByTagName('img');
 for (var i = 0; i < imgLists.length; i++) {
@@ -57,7 +57,7 @@ for (var i = 0; i < imgLists.length; i++) {
 
 ### 每行图片包上一个div容器
 
-```
+```javascript
 // 每行建立一个div，并装入尽可能多的图片，直到容器装不下
 var curWidth = 0;
 var div = document.createElement('div');
@@ -76,7 +76,7 @@ container.appendChild(div);
 
 ### 缩放每行至同一宽度，调整误差
 
-```
+```javascript
 var rows = container.getElementsByTagName('div'),
     scale, // 缩放比
     imgs,

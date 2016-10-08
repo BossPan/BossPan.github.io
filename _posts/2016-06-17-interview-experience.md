@@ -33,7 +33,7 @@ tags:       面试经验
 - 响应式布局 Media Query
   + IE 8 及以下不支持
 
-```
+```css
 @media screen and (min-width:600px) {
   nav {
     float: left;

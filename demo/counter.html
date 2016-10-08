@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成编号</title>
+	<style>
+		body {
+		    counter-reset: chapter;
+		}
+
+		h1 {
+		    counter-reset: section subsec;
+		}
+
+		h2 {
+		    counter-reset: subsec;
+		}
+
+		h1:before {
+		    counter-increment: chapter;
+		    content: counter(chapter) ". ";
+		}
+
+		h2:before {
+		    counter-increment: section;
+		    content: counter(chapter)"." counter(section) ". ";
+		}
+
+		h3:before {
+		    counter-increment: subsec;
+		    content: counter(chapter) "." counter(section) "." counter(subsec) ". ";
+		}
+
+		ol {
+		    list-style-type: none;
+		    counter-reset: ordered;
+		}
+
+		ol li:before {
+		    counter-increment: ordered;
+		    content: counters(ordered, ".") " - ";
+		}
+	</style>
+</head>
+<body>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h3>三级标题</h3>
+<h2>二级标题</h2>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h3>三级标题</h3>
+<h1>一级标题</h1>
+<hr>
+<ol>
+    <li>Lists1
+        <ol>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+        </ol>
+    </li>
+    <li>Lists2
+        <ol>
+            <li>list
+                <ol>
+                    <li>item</li>
+                </ol>
+            </li>
+            <li>list
+                <ol>
+                    <li>item</li>
+                    <li>item</li>
+                </ol>
+            </li>
+            <li>list
+                <ol>
+                    <li>item</li>
+                    <li>item</li>
+                    <li>item</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>Lists3</li>
+</ol>
+</body>
+</html>

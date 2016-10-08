@@ -23,7 +23,7 @@ tags:       JavaScript Node.js 学习笔记
 
 #### 3.1 建立 HTTP 服务器
 
-```
+```javascript
 var http = require('http');
 
 http.createServer(function(req, res) {
@@ -41,7 +41,7 @@ console.log("HTTP server is listening at port 3000.");
 - exports是模块统一的接口。
 - 创建模块。
 
-```
+```javascript
 var name;
 
 exports.setName = function(thyName) {
@@ -54,7 +54,7 @@ exports.sayHello = function() {
 ```
 - 获取接口。
 
-```
+```javascript
 var myModule = require('./module');
 
 myModule.setName('BYVoid');
@@ -73,7 +73,7 @@ hello1.sayHello(); //'Hello BYVoid 2'
 ```
 - 覆盖 export，将对象封装到模块中(事实上，exports 只是一个普通的空对象)。
 
-```
+```javascript
 function Hello() {
     var name;
 
@@ -96,7 +96,7 @@ exports.Hello = Hello;
     - 作为文件夹的模块
     - packpage.json
 
-```
+```javascript
 //somepackage/index.js
 
 exports.hello = function() {
@@ -152,7 +152,7 @@ $ node --debug-brk[=port] srcript.js
 ### 2. 常用工具 util
 - util 提供常用函数的集合。
 - util.inherits(constructor, superConstructor) 是一个实现对象间原型继承
-的函数。
+  的函数。
 - util.inspect(object,[showHidden],[depth],[colors])是一个将任意对象转换为字符串的方法，通常用于调试和错误输出。
 
 ### 3.事件驱动 events
@@ -165,7 +165,7 @@ $ node --debug-brk[=port] srcript.js
 - fs 模块中所有的操作都提供了异步的和同步的两个版本。
 - fs.readFile(filename,[encoding],[callback(err,data)])。
 
-```
+```javascript
 //readfileencoding.js
 
 var fs = require('fs');
@@ -183,7 +183,7 @@ fs.readFile('content.txt', 'utf-8', function(err, data) {
 - 与同步 I/O 函数不同，Node.js 中异步函数大多没有返回值。
 - fs.open(path, flags, [mode], [callback(err, fd)])。
 - fs.read(fd, buffer, offset, length, position, [callback(err, bytesRead,
-buffer)])是 POSIX read 函数的封装，相比 fs.readFile 提供了更底层的接口(除非必要，否则不要使用这种方式读取文件)。
+  buffer)])是 POSIX read 函数的封装，相比 fs.readFile 提供了更底层的接口(除非必要，否则不要使用这种方式读取文件)。
 
 ### 5. HTTP 服务器与客户端
 
@@ -192,7 +192,7 @@ buffer)])是 POSIX read 函数的封装，相比 fs.readFile 提供了更底层�
 - http.Server 的事件：request、connection、close。
 - 最常用的事件是 request，因此 http 提供了捷径： http.createServer([requestListener])
 
-```
+```javascript
 //httpserver.js
 
 var http = require('http');
@@ -277,7 +277,7 @@ app.use(partials());
 ```
 
 #### 2.7 视图助手
-```
+```javascript
 // 视图交互
 app.use(function (req, res, next) {
     res.locals.user = req.session.user;
@@ -318,7 +318,7 @@ app.use(function (req, res, next) {
 
 - 回调函数带来的问题
 
-```
+```javascript
 var fs = require('fs');
 var files = ['a.txt', 'b.txt', 'c.txt'];
 
@@ -333,7 +333,7 @@ for (var i = 0; i < files.length; i++) {
 
 ### 3. 日志功能
 
-```
+```javascript
 // 访问日志
 var fs = require('fs');
 var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
@@ -351,7 +351,7 @@ app.use(function (err, req, res, next) {
 ### 4. cluster 模块（利用多核资源）
 
 - cluster 的功能是生成与当
-前进程相同的子进程，并且允许父进程和子进程之间共享端口。
+  前进程相同的子进程，并且允许父进程和子进程之间共享端口。
 - [API](https://nodejs.org/docs/latest-v5.x/api/cluster.html)
 
 ### 5. 共享 80 端口

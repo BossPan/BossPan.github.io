@@ -21,7 +21,7 @@ tags:       JavaScript 学习笔记
 - 返回一个有left 、right 、top和bottom属性的对象。left和top属性表示元素的左上角的X和Y坐标， right和bottom属性表示元素的右下角的X和Y坐标。
 - getBoundingClientRect() 返回的对象还包含width和height属性，但是在原始的IE中未实现。为了简便起见，可以这样计算元素的width和height。
 
-```
+```javascript
 var box = e.getBoundingClientRect();
 var w = box.width || (box.right - box.left);
 var h = box.height || (box.bottom - box.top);
@@ -43,7 +43,7 @@ var h = box.height || (box.bottom - box.top);
   - 如果没有给 HTML 元素指定过 top 样式，则 style.top 返回的是空字符串。
   - offsetWidth 与 style.width、offsetHeight 与 style.height 也是同样道理。
 
-```
+```javascript
 // 获取元素视口坐标的兼容性方案
 function getElementPos(elt) {
     var x = 0,
@@ -101,7 +101,7 @@ function getElementPos(elt) {
 - 以css pixels 度量
 - IE 8 及以下不支持
 
-```
+```javascript
 // 获取窗口的视口尺寸viewport的兼容性方案
 // 标准 strict 模式
 // 怪异模式的IE
@@ -122,7 +122,7 @@ var h = window.innerHeight || document.documentElement.clientHeight || document.
 - IE 8 及之前版本的 IE 不支持, 使用 document.body.scrollLeft /document.body.scrollTop 代替
 - 原理上来说，在用户放大浏览器时，向上滚动了页面，window.pageX/YOffset 会改变。但当用户放大页面时，浏览器会尝试着保存用户当前可见的页面的元素依然在可见位置。虽然该特性表现得不如预期，但它意味着：在理论上该情况下  window.pageX/YOffset 并没有改变，被用户滚出屏幕的css pixels几乎保存不变。
 
-```
+```javascript
 // 获取滚动条位置的兼容性方案
 function getScrollOffsets(w) {
     w = w || window;

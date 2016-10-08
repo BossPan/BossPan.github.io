@@ -7,7 +7,7 @@ tags:       JavaScript 学习笔记
 
 考虑数组去重这个问题，JavaScript 里最容易想到的方法应该是下面这个
 
-```
+```javascript
     function unique(arr) {
         var newArr = [];
         for (var i = 0, len = arr.length; i < len; i++) {
@@ -21,7 +21,7 @@ tags:       JavaScript 学习笔记
 
 但是 indexOf 方法 IE8 及以下不支持，所以需要对 indexOf 改进一下。像下面这样
 
-```
+```javascript
     // 兼容 IE 的 indexOf 函数
 	var indexOf = [].indexOf ? function (arr, item) {
         return arr.indexOf(item);
@@ -46,7 +46,7 @@ tags:       JavaScript 学习笔记
 ```
 有一种类似的方法，同样是用到了两重循环，只是循环的思路不太一样，并且没有用到 indexOf 函数。
 
-```
+```javascript
     function unique(arr) {
         var newArr = [];
         for (var i = 0, len = arr.length; i < len; i++) {
@@ -64,7 +64,7 @@ tags:       JavaScript 学习笔记
 ```
 如果数组很大，上面两种方法就效率很低。一种改进方法是使用 Hash 对象。
 
-```
+```javascript
     function unique(arr) {
         var newArr = [];
         var hash = {};
@@ -79,7 +79,7 @@ tags:       JavaScript 学习笔记
 ```
 借助于 Hash 对象的问题在于，值 1 和 '1' 被认为是相同的，改进一下。
 
-```
+```javascript
     function unique(arr) {
         var newArr = [];
         var hash = {};
