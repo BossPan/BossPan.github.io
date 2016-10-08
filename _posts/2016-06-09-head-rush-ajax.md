@@ -104,8 +104,7 @@ function sendRequest(opt) {
 
 
 ##  参考目录
-
+- [开始](https://developer.mozilla.org/zh-CN/docs/AJAX/Getting_Started)
 - [原生JS封装ajax方法](http://www.cnblogs.com/a757956132/p/5603176.html)
 - [Ajax入门（二）Ajax函数封装](http://guowenfh.github.io/2015/12/18/Ajax-elementary-course-2-fn/)
-- [开始](https://developer.mozilla.org/zh-CN/docs/AJAX/Getting_Started)
 - [XMLHttpRequest 对象](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
