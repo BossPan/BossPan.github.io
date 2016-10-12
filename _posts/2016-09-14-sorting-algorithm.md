@@ -194,7 +194,7 @@ function quick_sort(arr) {
             right.push(arr[i]);
         }
     }
-    return quick_sort(left).concat(middle.concat(quick_sort(right)));
+    return quick_sort(left).concat(middle, quick_sort(right));
 }
 ```
 

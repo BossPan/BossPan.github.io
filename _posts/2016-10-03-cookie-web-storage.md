@@ -7,7 +7,7 @@ tags:       JavaScript Cookie Web-Storage
 
 ## Cookie
 
-cookie是一种早期的客户端存储机制，起初是针对服务器端脚本设计使用的。
+cookie是一种早期的客户端存储机制，起初是针对服务器端脚本设计使用的，指某些网站为了辨别用户身份、进行 session 跟踪而储存在用户本地终端上的数据（通常经过加密）。
 
 cookie数据会自动在Web浏览器和Web服务器之间传输，因此服务端脚本可以读、写存储在客户端的cookie的值。
 
