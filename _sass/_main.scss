@@ -41,7 +41,6 @@ body {
 
 .site-header a {
   color: #333;
-  font-weight: 300;
 }
 
 .site-header nav a {
@@ -111,8 +110,6 @@ body {
 .pagination,
 .button {
   font-size: 1rem;
-  font-family: Microsoft YaHei, sans-serif;
-  font-weight: 300;
   text-align: center;
 }
 
@@ -120,7 +117,7 @@ body {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  background: #fafafa;
+  background-color: #f3f3f3;
   border-radius: 0.1875em;
   border: 1px solid #f3f3f3;
   color: #333333;
@@ -128,7 +125,7 @@ body {
 }
 
 .pagination .disabled {
-    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .pagination a:hover, .pagination a:focus {
@@ -148,7 +145,6 @@ body {
 .post-meta {
   width: auto;
   font-size: 1rem;
-  font-weight: 300;
   margin: 0;
   padding: .25em 0;
   color: #7a7a7a;
@@ -156,7 +152,6 @@ body {
 
 .pagination .button {
   font-size: 1rem;
-  font-weight: 300;
   letter-spacing: 1px;
 }
 
@@ -174,7 +169,6 @@ body {
 
 form {
   font-family: Microsoft YaHei, sans-serif;
-  font-weight: 300;
   font-size: 1rem;
 }
 
@@ -184,7 +178,6 @@ textarea.input {
 
 p {
   color: #000;
-  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -398,8 +391,7 @@ footer {
 footer,
 footer .wrap {
   color: #7a7a7a;
-  background-color: #fafafa;
-  font-family: Microsoft YaHei, sans-serif;
+  background-color: #f3f3f3;
   font-weight: 300;
   clear: both;
 }
