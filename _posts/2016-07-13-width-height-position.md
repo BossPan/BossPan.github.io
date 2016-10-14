@@ -18,7 +18,7 @@ tags:       JavaScript 学习笔记
 ### 获取元素的尺寸和位置
 
 - getBoundingClientRect()
-- 返回一个有left 、right 、top和bottom属性的对象。left和top属性表示元素的左上角的X和Y坐标， right和bottom属性表示元素的右下角的X和Y坐标。
+- 返回一个有 left 、right 、top 和 bottom 属性的对象。left和top属性表示元素的左上角的X和Y坐标， right和bottom属性表示元素的右下角的X和Y坐标。
 - getBoundingClientRect() 返回的对象还包含width和height属性，但是在原始的IE中未实现。为了简便起见，可以这样计算元素的width和height。
 
 ```javascript
@@ -68,7 +68,7 @@ function getElementPos(elt) {
 
 ### clientWidth/Height
 
-- 类似 offsetWidth/Height . 不同的是它们不包含边框大小，只包含内容和它的内边距。
+- 类似 offsetWidth/Height。不同的是它们不包含边框大小，只包含内容和它的内边距。
 - 如果浏览器在内边距和边框之间添加了滚动条，clientWidth/Height 在其返回值中也不包含滚动条。
 - 对于内联元素，总是返回0 。
 
@@ -80,7 +80,7 @@ function getElementPos(elt) {
 
 ### scrollWidth/Height
 
-- 元素的内容区域加上它的内边距再加上任何**溢出内容的尺寸**。
+- 元素的内容区域加上它的内边距再加上任何 **溢出内容的尺寸**。
 - 当内容正好和内容区域匹配而没有溢出时，这些属性与 clientWidth/Height 是相等的。但当溢出时，它们就包含溢出的内容，返回值比 clientWidth/Height 要大。
 
 ### scrollLeft/Top
