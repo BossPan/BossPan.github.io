@@ -12,6 +12,7 @@ no_duoshuo: true
     {% endif %}
   {% endfor %}
 </div>
+
 <div class="post">
     <div>
         <ul>
@@ -20,7 +21,8 @@ no_duoshuo: true
             {% if year != ym %}
             {% assign year = ym %}
             </ul>
-            <blockquote id="{{ ym }}">{{ ym }}</blockquote>
+            <hr>
+            <h2 id="{{ ym }}">{{ ym }}</h2>
             <ul>
             {% endif %}
             <li>

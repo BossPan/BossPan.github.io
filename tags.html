@@ -14,7 +14,8 @@ no_duoshuo: true
 <div class="post">
     <div>
     {% for tag in site.tags %}
-        <blockquote id="{{ tag[0] }}">{{ tag[0] }}</blockquote>
+        <hr>
+        <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
         <ul>
             {% for post in tag[1] %}
             <li>

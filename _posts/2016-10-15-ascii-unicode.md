@@ -1,6 +1,6 @@
 ---
 title:      字符编码
-summary:    常见的字符编码
+summary:    ASCII、Unicode、UTF-8
 categories: Computer
 tags:       Computer 计算机基础知识
 ---
