@@ -6,7 +6,6 @@ permalink: /about.html
 
 大连理工大学大四学生，信息管理与信息系统专业。
 
-正在努力找工作中，Fighting!!!
 
 ## 联系我
 
