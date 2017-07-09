@@ -11,8 +11,6 @@ permalink: /about.html
 
 - GitHub: [bosspan](https://github.com/bosspan)
 - Email: 1356101589@qq.com
-- Weibo: [xiaopanwudlut](http://weibo.com/u/5035168036)
-- Zhihu: [xiaopanwudlut](https://www.zhihu.com/people/xiaopanwudlut)
 
 ## 更新日志
 
